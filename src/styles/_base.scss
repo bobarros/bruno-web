@@ -250,8 +250,26 @@ h6 {
 }
 
 .neymar * {
+  font-family: Avenir, Avenir Next, Helvetica Neue, Segoe UI, Helvetica, Arial,
+    sans-serif !important;
+}
 
-    font-family: Avenir, Avenir Next, Helvetica Neue, Segoe UI, Helvetica, Arial,
-      sans-serif !important;
+////////////////////////// Animations
 
+////Nav
+
+.moveUpAnimated {
+  span:nth-child(1) {
+    transform: rotate(45deg) translate(-1px, 4px);
+  }
+  span:nth-child(2) {
+    display: none;
+  }
+  span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -10px);
+  }
+}
+
+.moveUpNavBox {
+  bottom: calc(100% - 10rem) !important;
 }

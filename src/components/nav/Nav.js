@@ -1,22 +1,39 @@
-import styles from "components/nav/Nav.module.scss";
-import { useSwipeable } from "react-swipeable";
-import { useRouter } from "next/router";
+/////////////////////////////////////////////////////////// Next
+
 import Link from "next/link";
+
+/////////////////////////////////////////////////////////// Third Parties
+
+import { useSwipeable } from "react-swipeable";
+
+/////////////////////////////////////////////////////////// Styled Components
 
 import {
   NavBar,
   Links,
-  MovelNav
+  MovelNav,
+  Sections,
+  MenuMobile,
+  Item,
+  Hamburguer,
+  LogoMobile
 } from 'components/nav/StyledNav';
+
+/////////////////////////////////////////////////////////// Imported Components
+
 import InstagramSVG from "svg/InstagramSVG";
 import EmailSVG from "svg/EmailSVG";
 import LogoSVG from "svg/LogoSVG";
 
+/////////////////////////////////////////////////////////// Local Functions
+
 const moveUp = () => {
   const d = document;
-  d.getElementById("movelNav").classList.toggle(styles.moveUp);
-  d.getElementById("navButton").classList.toggle(styles.movelNav__animated);
+  d.getElementById("movelNav").classList.toggle("moveUpNavBox");
+  d.getElementById("navButton").classList.toggle("moveUpAnimated");
 };
+
+/////////////////////////////////////////////////////////// Local Components
 
 const LinkDesk = ({ href, children }) => {
   return (
@@ -26,17 +43,21 @@ const LinkDesk = ({ href, children }) => {
   )
 }
 
-const LinkMobile = ({ onClick, classItem, classAnchor, href, children }) => {
+const LinkMobile = ({ href, children }) => {
   return (
-    <div onClick={onClick} className={classItem}>
+    <Item onClick={moveUp}>
       <Link href={href}>
-        <a className={classAnchor}>{children}</a>
+        <a>{children}</a>
       </Link>
-    </div>
+    </Item>
   )
 }
 
+/////////////////////////////////////////////////////////// Main Component
+
 const Nav = () => {
+
+  /////////////////// Swipeable config
   const handlers = useSwipeable({
     onSwipedDown: () => {
       moveUp();
@@ -46,6 +67,7 @@ const Nav = () => {
     trackTouch: true,
   });
 
+  /////////////////// Swipeable config
   return (
     <>
       <NavBar>
@@ -61,46 +83,44 @@ const Nav = () => {
         {...handlers}
         style={{ touchAction: "pan-x" }}
       >
-        <div className={styles.movelNav__sessoes}>
+        <Sections>
           <a
             target="_blank"
             rel="noopener"
             href="https://www.instagram.com/talvezobruno"
-            className={styles.movelNav__sessao}
           >
-            <InstagramSVG />
+            instagram<InstagramSVG />
           </a>
-          <div
+          <Hamburguer
             id="navButton"
             onClick={moveUp}
-            className={styles.movelNav__sessao}
           >
             <span></span>
             <span></span>
             <span></span>
-          </div>
-          <a
-            href="mailto:brunobarros@ideias.dev"
-            className={styles.movelNav__sessao}
-          >
-            <EmailSVG />
+          </Hamburguer>
+          <a href="mailto:brunobarros@ideias.dev" >
+            email<EmailSVG />
           </a>
-        </div>
-        <div className={styles.menuMovel}>
-          <LinkMobile onClick={moveUp} classItem={styles.item} classAnchor={styles.link} href="/" >
+        </Sections>
+        <MenuMobile>
+          <LinkMobile href="/" >
             Home
           </LinkMobile>
-          <LinkMobile onClick={moveUp} classItem={styles.item} classAnchor={styles.link} href="/skills" >
-          Skills
+          <LinkMobile href="/skills" >
+            Skills
           </LinkMobile>
-          <LinkMobile onClick={moveUp} classItem={styles.item} classAnchor={styles.link} href="/portfolio" >
-          Portfolio
+          <LinkMobile href="/portfolio" >
+            Portfolio
           </LinkMobile>
-          <LinkMobile onClick={moveUp} classItem={styles.item} classAnchor={styles.link} href="/contact" >
-          Contact
-          </LinkMobile> 
-        </div>
-        <LogoSVG className={styles.logoMovel} />
+          <LinkMobile href="/contact" >
+            Contact
+          </LinkMobile>
+        </MenuMobile>
+        <LogoMobile>
+          logo bruno<LogoSVG />
+        </LogoMobile>
+
       </MovelNav>
     </>
   );

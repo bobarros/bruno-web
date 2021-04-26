@@ -72,3 +72,87 @@ export const MovelNav = styled.div`
     transition: all 0.55s ease-in;  
   }
 `;
+
+////////////////////////////////////////////////////////
+
+export const Sections = styled.div`
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+
+  div {
+    padding: 0 5rem;
+  }
+  
+  svg {
+    width: 4.5rem;
+    height: 4.5rem;
+    fill: #efefef;
+  }
+
+  a {
+    font-size: 0;
+  }
+    
+`;
+
+//////////////////////////////////////////////////////
+
+export const MenuMobile = styled.div`
+  background-color: var(--color-background);
+  color: var(--color-font);
+  height: calc(100vh - 6rem);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0 0 0;
+  position: relative;
+  top: -0.1rem;
+`;
+
+//////////////////////////////////////////////////////
+
+export const Item = styled.div`
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  line-height: 6rem;
+  font-family: "JetBrains Mono";
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-font);
+  padding-left: 3rem;
+`;
+
+//////////////////////////////////////////////////////
+
+export const Hamburguer = styled.div`
+  span {
+    width: 4.5rem;
+    height: 5px;
+    background-color: #efefef;
+    display: block;
+    margin: 8px 0;
+    border-radius: 3px;
+    transform-origin: center;
+    transition: transform 0.5s ease-out;
+  }     
+  `;
+
+//////////////////////////////////////////////////////
+
+export const LogoMobile = styled.a`
+  position: relative;
+  bottom: 35vh;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 15rem;
+  height: 15rem;
+  display: block;
+  border-radius: 50%;
+  background-color: #fff;
+  padding-left: 1rem;
+  font-size: 0;
+`;
