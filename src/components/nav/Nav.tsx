@@ -120,7 +120,7 @@ const Nav = () => {
           <LinkMobile href="/contact">Contact</LinkMobile>
         </MenuMobile>
         <LogoMobile>
-          logo bruno
+          logo bob
           <LogoSVG />
         </LogoMobile>
       </MovelNav>
