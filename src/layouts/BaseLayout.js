@@ -1,7 +1,7 @@
 import Logo from "components/logo/Logo";
 import Footer from "components/footer/Footer";
 import React, { useEffect } from "react";
-import Nav from "components/nav/Nav";
+import Nav from "components/nav/Nav.tsx";
 import Night from "components/night/Night";
 import ToTop from 'utilities/ToTop/ToTop';
 

@@ -1,4 +1,4 @@
-const LogoSVG = ({ href, className }) => {
+const LogoSVG = () => {
   return (
     <svg
       className="nav-bar__svg"
