@@ -1,0 +1,21 @@
+{
+  "name": "brunobarros.dev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "sitemap": "node components/sitemap.js",
+    "start": "next start",
+    "export": "next build && next export"
+  },
+  "dependencies": {
+    "next": "10.0.5",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-gtm-module": "^2.0.11",
+    "react-swipeable": "^6.1.0",
+    "sass": "^1.32.5",
+    "typescript": "^4.2.4"
+  }
+}
