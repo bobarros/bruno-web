@@ -117,8 +117,8 @@ const Nav = () => {
             Contact
           </LinkMobile>
         </MenuMobile>
-        <LogoMobile>
-          logo bruno<LogoSVG />
+        <LogoMobile href="/">
+        logo bruno<LogoSVG />
         </LogoMobile>
 
       </MovelNav>

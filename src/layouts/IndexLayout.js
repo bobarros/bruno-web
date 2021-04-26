@@ -1,9 +1,9 @@
-import Logo from "components/logo/Logo.tsx";
+import Logo from "components/logo/Logo";
 import Footer from "components/footer/Footer";
 import React, { useEffect } from "react";
 import Nav from "components/nav/Nav.tsx";
 import Night from "components/night/Night.tsx";
-import ToTop from 'utilities/ToTop/ToTop';
+import ToTop from 'components/ToTop/ToTop';
 
 const IndexLayout = (props) => {
   const { children } = props;

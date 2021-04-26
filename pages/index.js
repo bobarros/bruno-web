@@ -12,13 +12,13 @@ export default function Home() {
   "@type": "WebSite",
   "mainEntityOfPage":{
   "@type":"WebPage",
-  "@id":"https://www.brunobarros.dev/en"
+  "@id":"https://brunobarros.dev/en"
   },
   "image": {
   "@type": "ImageObject",
-  "url": "https://www.brunobarros.dev/img/favicon.png",
+  "url": "https://brunobarros.dev/img/favicon.png",
   "height": 128,
-  "width": 128},
+  "width": 128,
   "author": {
   "@type": "Organization",
   "name": "brunobarros.dev"
@@ -28,7 +28,7 @@ export default function Home() {
   "name": "brunobarros.dev",
   "logo": {
   "@type": "ImageObject",
-  "url": "https://www.brunobarros.dev/img/favicon.png",
+  "url": "https://brunobarros.dev/img/favicon.png",
   "width": 128,
   "height": 128
   }
@@ -62,7 +62,7 @@ export default function Home() {
           property="og:description"
           content="What you need to know about Bruno Barros - WebDesigner"
         />
-        <meta property="og:url" content={`https://www.brunobarros.dev/`} />
+        <meta property="og:url" content={`https://brunobarros.dev/`} />
         <meta property="og:image:type" content="image/jpeg" />
         <meta
           property="og:image"
@@ -71,7 +71,6 @@ export default function Home() {
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="fb:app_id" content="276016760683197" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="brunobarros.dev" />
         <meta name="twitter:card" content="summary" />

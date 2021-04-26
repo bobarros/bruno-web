@@ -1,4 +1,6 @@
-.ToTop {
+import styled from 'styled-components';
+
+export const Wrap = styled.div`
   cursor: pointer;
   font-size: 3.2rem;
   font-weight: bold;
@@ -15,14 +17,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.ToTop::before {
-  content: "";
-  background-color: transparent;
-  width: 6rem;
-  height: 6rem;
-  position: absolute;
-  top: -1.3rem;
-  right: -1.5rem;
-}
+  &::before {
+    content: "";
+    background-color: transparent;
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    top: -1.3rem;
+    right: -1.5rem;
+  }
+`;

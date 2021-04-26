@@ -17,10 +17,10 @@ export default function Logo() {
   return (
     <Link href="/">
       <Wrap href="/">
+        logo bob
         <Text>.dev</Text>
         <Overlay>logo</Overlay>
         <LogoSVG />
-        logo bob
       </Wrap>
     </Link>
   );

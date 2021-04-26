@@ -3,7 +3,6 @@ import styled from 'styled-components';
 /////////////////////////////////////////////////////////
 
 export const Wrap = styled.a`
-  
   cursor: pointer;
   position: fixed;
   top: 1.25rem;
@@ -27,12 +26,6 @@ export const Wrap = styled.a`
     left: 3.5rem;
   }
 }
-
-  svg {
-    height: 5.5rem;
-    width: 5.5rem;
-    fill: #fff;
-  }
 
   path,
   polygon {

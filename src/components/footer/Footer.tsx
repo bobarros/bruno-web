@@ -1,3 +1,7 @@
+////////////////////////////////////////////////////////////////////// React
+
+import React, { ReactNode } from "react";
+
 ///////////////////////////////////////////////////////////////////////// Next
 
 import Link from "next/link";
@@ -11,7 +15,6 @@ import LogoSVG from "svg/LogoSVG";
 import {
   Wrap,
   Text,
-  Disclaimer,
   Credits,
   Links,
   Logo
@@ -19,7 +22,7 @@ import {
 
 /////////////////////////////////////////////////////////////// Prep Components
 
-const CustomLink = ({ href, children }) => {
+const CustomLink = ({ href, children }:Props) => {
   return (
     <li>
       <Link href={href}>
@@ -28,6 +31,13 @@ const CustomLink = ({ href, children }) => {
     </li>
   )
 }
+
+////////////////////////////////////////////////////////////////////////// Types
+
+type Props = {
+  children?: ReactNode;
+  href: string;
+};
 
 //////////////////////////////////////////////////////////////// Main Component
 

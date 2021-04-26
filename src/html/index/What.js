@@ -23,7 +23,7 @@ const Wait = () => {
       </div>
       <Link href="/portifolio">
         <a className="imagemWrap">         
-         
+         Imagem
         </a>
       </Link>
 

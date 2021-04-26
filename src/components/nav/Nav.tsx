@@ -119,7 +119,7 @@ const Nav = () => {
           <LinkMobile href="/portfolio">Portfolio</LinkMobile>
           <LinkMobile href="/contact">Contact</LinkMobile>
         </MenuMobile>
-        <LogoMobile>
+        <LogoMobile href="/">
           logo bob
           <LogoSVG />
         </LogoMobile>
