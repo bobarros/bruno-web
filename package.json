@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "sitemap": "node components/sitemap.js",
     "start": "next start",
     "export": "next build && next export",
