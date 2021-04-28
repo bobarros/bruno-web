@@ -465,25 +465,20 @@
   display: block;
   margin: 0 auto 5rem auto;
   border-radius: 15px;
+  width: 80%;
+  max-width: 700px;
+  height: auto;
   box-shadow: 2px 2px 10px 5px rgb(0 0 0 / 45%);
+
+  @media only screen and (max-width: 701px) {
+    width: 95%;
+  }
 
   img {
     border-radius: 15px;
     border-radius: 15px;
     width: 100%;
-    height: auto;
-  }
-
-  @media only screen and (max-width: 1040px) {
-    margin: 0 1rem 5rem 1rem;
-  }
-
-  @media only screen and (max-width: 700px) {
-    margin: 0 auto 6rem auto;
-  }
-
-  @media only screen and (max-width: 590px) {
-    margin: 0 1.5rem 6rem 1.5rem;
+    height: 100%;
   }
 }
 .parceiros {

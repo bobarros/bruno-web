@@ -37,8 +37,7 @@ const How = () => {
             </div>
           </div>
           <p className="paragrafo">
-            I like to learn and that's a lot I can do but I don't know
-            everything, right?
+          I like to learn and there's a lot that I can do. Unfortunately, there are way more things that I just can't do.
           </p>
           <p className="paragrafo">
             Some clients like to go more extensive and know what features I am familiar with. Here it is!

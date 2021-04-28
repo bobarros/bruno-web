@@ -11,7 +11,7 @@ const IndexHeader = () => {
         <p className="headerLinhaStrong">Hi, I'm Bruno Barros</p>
 
         <p className="headerLinhaLight topMargin">
-          and I bring online interfaces to life.
+          a Web Developer that finds joy bulding great things.
         </p>
       </div>
       <div className="avatar">

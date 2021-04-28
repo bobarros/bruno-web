@@ -273,3 +273,7 @@ h6 {
 .moveUpNavBox {
   bottom: calc(100% - 10rem) !important;
 }
+
+#propImage {
+  object-fit: cover;
+}
