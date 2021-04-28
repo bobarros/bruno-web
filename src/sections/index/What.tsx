@@ -1,6 +1,7 @@
 //////////////////////////////////////////////////////////////////////// Next
 
 import Link from "next/link";
+import Image from "next/image";
 
 //////////////////////////////////////////////////////////////////////// Next
 
@@ -57,15 +58,14 @@ const Wait = () => {
             </picture>
           )}
           {loadImage && (
-            <img
+            <Image
               width={finalWidth}
               height={finalHeight}
+              objectFit="cover"
               src={
-                finalWidth > 601 
-                ? 
-                `https://res.cloudinary.com/bobarros/image/upload/q_auto,f_auto,w_${finalWidth}/v1612389072/index/portfolio_pt8tjq` 
-                : 
-                `https://res.cloudinary.com/bobarros/image/upload/q_auto,f_auto,w_${finalWidth}/v1612389075/index/portfolio_movel_xunwje`
+                finalWidth > 601
+                  ? `/img/port_desk.jpg`
+                  : `/img/port_mobile.jpg`
               }
               alt="teste"
             />
