@@ -5,7 +5,7 @@ import How from "html/index/How";
 import What from "html/index/What";
 import IndexHeader from "html/index/IndexHeader";
 
-export default function Home() {
+export default function Home({ name, description, images }) {
   const structuredJSON = `
   {
   "@context": "http://schema.org",

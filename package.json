@@ -1,7 +1,13 @@
 {
   "name": "brunobarros.dev",
   "version": "0.1.0",
+  "author": "Bruno Barros <brunobarrosg@ideias.dev>",
   "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobarros/bruno-web"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -26,5 +32,5 @@
     "@types/styled-components": "^5.1.9",
     "babel-plugin-styled-components": "^1.12.0",
     "typescript": "^4.2.4"
-  }
+  } 
 }
