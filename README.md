@@ -67,8 +67,8 @@ A quick look at the folder structure of this project.
 
 ## Tools Used
 
-**1.** Next.js
-**2.** Styled Components for styling
+**1.** Next.js \
+**2.** Styled Components for styling \
 **3.** Typescript
 
 ## :v: Reach me
