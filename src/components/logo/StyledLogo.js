@@ -69,7 +69,6 @@ export const Text = styled.p`
   border-radius: 20px;
   padding: 1rem 2.5rem;
   width: fit-content;
-  transition: all 2s ease;
   font-family: 'JetBrains Mono';
 `;
 
