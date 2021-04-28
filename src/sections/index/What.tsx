@@ -15,7 +15,6 @@ const Wait = () => {
   const [finalHeight, setHeight] = useState(0);
 
   useEffect(() => {
-    console.log("fire");
     const elHeight = document.getElementById("propImage") as HTMLDivElement;
     const elWidth = document.getElementById("propImage") as HTMLDivElement;
 
