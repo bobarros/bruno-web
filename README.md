@@ -5,7 +5,6 @@
 </p> 
 <h3 align="center">👋 Hi! I'm Bruno Barros</h2>
 <p align="center">A Web Developer</p>
-<p align="center">![Website](https://img.shields.io/website?down_message=offline&label=site&up_message=online&url=http%3A%2F%2Fbrunobarros.dev)</p>
 
 ![Bruno Barros Site Preview](./public/img/web_demo.png)
 
