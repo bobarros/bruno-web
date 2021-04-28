@@ -1,4 +1,9 @@
+//////////////////////////////////////////////////////////////////////// Next
+
 import Link from "next/link";
+
+/////////////////////////////////////////////////////////////////// Component
+
 const Wait = () => {
   return (
     <section className="wait">
@@ -22,9 +27,7 @@ const Wait = () => {
         </p>
       </div>
       <Link href="/portifolio">
-        <a className="imagemWrap">         
-         Imagem
-        </a>
+        <a className="imagemWrap">Imagem</a>
       </Link>
 
       <div className="verMais verMaisHabilidades">

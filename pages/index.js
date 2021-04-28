@@ -1,9 +1,9 @@
 import Head from "next/head";
 import IndexLayout from "layouts/IndexLayout";
 
-import How from "html/index/How";
-import What from "html/index/What";
-import IndexHeader from "html/index/IndexHeader";
+import How from "sections/index/How";
+import What from "sections/index/What";
+import IndexHeader from "sections/index/IndexHeader";
 
 export default function Home({ name, description, images }) {
   const structuredJSON = `

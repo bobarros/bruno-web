@@ -1,4 +1,10 @@
+
+//////////////////////////////////////////////////////////////////////// Next
+
 import Link from "next/link";
+
+///////////////////////////////////////////////////////////// Local Components
+
 import CssSVG from "svg/CssSVG";
 import EltySVG from "svg/EltySVG";
 import FigmaSVG from "svg/FigmaSVG";
@@ -7,6 +13,8 @@ import JsSVG from "svg/JsSVG";
 import MongoSVG from "svg/MongoSVG";
 import NextSVG from "svg/NextSVG";
 import PhotoShopSVG from "svg/PhotoShopSVG";
+
+/////////////////////////////////////////////////////////////////// Component
 
 const How = () => {
   return (
