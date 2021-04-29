@@ -7,6 +7,17 @@ import Image from "next/image";
 
 import { useEffect, useState } from "react";
 
+//////////////////////////////////////////////////////////////////////// Next
+
+import {
+  Wrap,
+  BlocoTexto,
+  AberturaTexto,
+  Paragrafo,
+  ImagemWrap,
+  VerMais
+} from "sections/index/What/StyledWhat.js";
+
 /////////////////////////////////////////////////////////////////// Component
 
 const Wait = () => {
@@ -26,19 +37,19 @@ const Wait = () => {
   }, []);
 
   return (
-    <section className="wait">
-      <div className="blocoTexto">
-        <h2 className="aberturaTexto">How can I help you?</h2>
-        <p className="paragrafo">
+    <Wrap>
+      <BlocoTexto>
+        <AberturaTexto>How can I help you?</AberturaTexto>
+        <Paragrafo>
           Curious about what I'm working on or did in the past?
-        </p>
-        <p className="paragrafo">
+        </Paragrafo>
+        <Paragrafo>
           Go ahead and take a look at my porfolio. Just click on the image or
           button below.
-        </p>
-      </div>
+        </Paragrafo>
+      </BlocoTexto>
       <Link href="/portifolio">
-        <a className="imagemWrap">
+        <ImagemWrap>
           {!loadImage && (
             <picture>
               <source
@@ -62,20 +73,17 @@ const Wait = () => {
               height={finalHeight}
               objectFit="cover"
               src={
-                finalWidth > 601
-                  ? `/img/port_desk.jpg`
-                  : `/img/port_mobile.jpg`
+                finalWidth > 601 ? `/img/port_desk.jpg` : `/img/port_mobile.jpg`
               }
               alt="teste"
             />
           )}
-        </a>
+        </ImagemWrap>
       </Link>
-
-      <div className="verMais verMaisHabilidades">
+      <VerMais>
         <Link href="/portifolio">My Portfolio</Link>
-      </div>
-    </section>
+      </VerMais>
+    </Wrap>
   );
 };
 
