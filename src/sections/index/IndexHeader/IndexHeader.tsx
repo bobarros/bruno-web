@@ -1,23 +1,30 @@
 /////////////////////////////////////////////////////////////// Local Component
 
-import BrunoAvatar from "svg/BrunoAvatar"
+import BrunoAvatar from "svg/BrunoAvatar";
+
+/////////////////////////////////////////////////////////// Styled Components
+
+import {
+  Header,
+  TextWrap,
+  HeaderLinhaStrong,
+  HeaderLinhaLight,
+  Avatar,
+} from "sections/index/IndexHeader/StyledIndexHeader";
 
 ///////////////////////////////////////////////////////////////////// Component
 
 const IndexHeader = () => {
   return (
-    <section className="header">
-      <div className="textWrap">
-        <p className="headerLinhaStrong">Hi, I'm Bruno Barros</p>
-
-        <p className="headerLinhaLight topMargin">
-          a Web Developer that finds joy bulding great things.
-        </p>
-      </div>
-      <div className="avatar">
+    <Header>
+      <TextWrap>
+        <HeaderLinhaStrong>Hi, I'm Bruno Barros</HeaderLinhaStrong>
+        <HeaderLinhaLight>a Web Developer that finds joy bulding great things.</HeaderLinhaLight>
+      </TextWrap>
+      <Avatar>
         <BrunoAvatar />
-      </div>
-    </section>
+      </Avatar>
+    </Header>
   );
 };
 
