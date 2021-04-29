@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////// React
 
-import React, { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 
 /////////////////////////////////////////////////////////////////////// Next
 
@@ -28,6 +28,9 @@ import {
 import InstagramSVG from "svg/InstagramSVG";
 import EmailSVG from "svg/EmailSVG";
 import LogoSVG from "svg/LogoSVG";
+import Logo from "components/logo/Logo";
+import Night from "components/night/Night";
+import ToTop from "components/ToTop/ToTop";
 
 /////////////////////////////////////////////////////////////// Local Functions
 
@@ -72,6 +75,50 @@ const LinkMobile = ({ href, children }: Props) => {
 /////////////////////////////////////////////////////////// Main Component
 
 const Nav = () => {
+  useEffect(() => {
+    const d = document;
+    const sun = d.getElementById("sol") as HTMLDivElement;
+    const moon = d.getElementById("lua") as HTMLDivElement;
+
+    ////// elements
+    const avatarHead = d.getElementById("cabeca") as HTMLElement;
+    const avatarClosedEyes = d.getElementById("fechado") as HTMLElement;
+    const avatarLight = d.getElementById("luz") as HTMLElement;
+    const avatarLeftEye = d.getElementById("esquerdo") as HTMLElement;
+
+    const sunClassList = sun.classList;
+    const moonClassList = moon.classList;
+
+    let option = "day";
+
+    let status = localStorage.getItem("darkModeBruno");
+    if (status === "true" || status === null) {
+      option = "night";
+      sunClassList.toggle("notShow");
+      moonClassList.toggle("show");
+      avatarHead.classList.add("cabecaRotate");
+      avatarClosedEyes.style.opacity = "1";
+      avatarLight.classList.add("toBlink");
+      avatarLeftEye.style.opacity = "0";
+    } else {
+      sunClassList.toggle("show");
+      moonClassList.toggle("notShow");
+      avatarHead.classList.remove("cabecaRotate");
+      avatarClosedEyes.style.opacity = "0";
+      avatarLight.classList.remove("toBlink");
+      avatarLeftEye.style.opacity = "1";
+    }
+
+    if (status === null) {
+      localStorage.setItem("darkModeBruno", "true");
+    }
+
+    if (option === "day") {
+      d.body.classList.remove("night");
+      d.body.classList.add(option);
+    }
+  }, []);
+
   /////////////////// Swipeable config
   const handlers = useSwipeable({
     onSwipedDown: () => {
@@ -86,6 +133,9 @@ const Nav = () => {
   return (
     <>
       <NavBar>
+        <Night />
+        <Logo />
+        <ToTop />
         <Links>
           <LinkDesk href="/">Home</LinkDesk>
           <LinkDesk href="/skills">Skills</LinkDesk>

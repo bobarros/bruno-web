@@ -1,3 +1,7 @@
+/////////////////////////////////////////////////////////// React
+
+import { useEffect } from "react";
+
 /////////////////////////////////////////////////////////// Next
 
 import Link from "next/link";
@@ -19,11 +23,14 @@ import {
   LogoMobile
 } from 'components/nav/StyledNav';
 
-/////////////////////////////////////////////////////////// Imported Components
+/////////////////////////////////////////////////////////// Local Components
 
 import InstagramSVG from "svg/InstagramSVG";
 import EmailSVG from "svg/EmailSVG";
 import LogoSVG from "svg/LogoSVG";
+import Logo from "components/logo/Logo";
+import Night from "components/night/Night";
+import ToTop from 'components/ToTop/ToTop';
 
 /////////////////////////////////////////////////////////// Local Functions
 
@@ -57,6 +64,42 @@ const LinkMobile = ({ href, children }) => {
 
 const Nav = () => {
 
+  useEffect(() => {
+    const d = document;
+    let sol = d.getElementById("sol").classList;
+    let lua = d.getElementById("lua").classList;
+
+    let option = "day";
+
+    let status = localStorage.getItem("darkModeBruno");
+    if (status === "true" || status === null) {
+      option = "night";
+      sol.toggle("notShow");
+      lua.toggle("show");
+      d.getElementById("cabeca").classList.add("cabecaRotate");
+      d.getElementById("fechado").style.opacity = "1";
+      d.getElementById("luz").classList.add("toBlink");
+      d.getElementById("esquerdo").style.opacity = "0";
+    } else {
+      sol.toggle("show");
+      lua.toggle("notShow");
+      d.getElementById("cabeca").classList.remove("cabecaRotate");
+      d.getElementById("fechado").style.opacity = "0";
+      d.getElementById("luz").classList.remove("toBlink");
+      d.getElementById("esquerdo").style.opacity = "1";
+    }
+
+    if (status === null) {
+      localStorage.setItem("darkModeBruno", "true");
+    }
+
+    if (option === "day") {
+      d.body.classList.remove("night");
+      d.body.classList.add(option);
+    }
+
+  }, []);
+
   /////////////////// Swipeable config
   const handlers = useSwipeable({
     onSwipedDown: () => {
@@ -71,6 +114,9 @@ const Nav = () => {
   return (
     <>
       <NavBar>
+        <Night />
+        <Logo />
+        <ToTop />
         <Links>
           <LinkDesk href="/">Home</LinkDesk>
           <LinkDesk href="/skills">Skills</LinkDesk>
@@ -118,7 +164,7 @@ const Nav = () => {
           </LinkMobile>
         </MenuMobile>
         <LogoMobile href="/">
-        logo bruno<LogoSVG />
+          logo bruno<LogoSVG />
         </LogoMobile>
 
       </MovelNav>

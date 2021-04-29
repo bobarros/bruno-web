@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////// React
 
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 ///////////////////////////////////////////////////////////////////////// Next
 
@@ -46,7 +46,7 @@ const Footer = () => {
     <Wrap id="footer" className="nao-imprimir">
       <Link href="/">
         <Logo href="/">
-          <LogoSVG />
+          logo bob<LogoSVG />
         </Logo>
       </Link>
       <Links>
