@@ -130,6 +130,7 @@ export const SocialIcons = styled.div`
   align-items: center;
   justify-content: center;
   margin: 4rem 0;
+  font-size: 0;
 
   @media only screen and (max-width: 901px) {
     display: none;
