@@ -72,10 +72,10 @@ const Footer = () => {
           rel="noopener"
           href="https://github.com/bobarros"
         >
-          <GitSVG />
+          bruno github profile<GitSVG />
         </a>
         <a href="mailto:brunobarros@ideias.dev">
-          <EmailSVG />
+        bruno email address<EmailSVG />
         </a>
 
       </SocialIcons>
