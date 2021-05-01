@@ -53,13 +53,11 @@ export default function Home() {
         <noscript>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" />
         </noscript>
-
         <meta     httpEquiv="Content-Type"      content="text/html; charset=UTF-8" />
         <meta     name="viewport"               content="width=device-width,minimum-scale=1,initial-scale=1" />
         <meta     httpEquiv="X-UA-Compatible"   content="ie=edge" />
         <meta     property="og:locale"          content="en_US" />
         <meta     property="og:site_name"       content="brunobarros.dev" />
-        <meta     name="robots"                 content="index, follow" />
         <meta     name="description"            content="What you need to know about Bruno Barros - WebDesigner" />
         <meta     property="og:title"           content="brunobarros.dev - Giving life to online interfaces!" />
         <meta     property="og:description"     content="What you need to know about Bruno Barros - WebDesigner" />
