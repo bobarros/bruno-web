@@ -18,7 +18,7 @@ export default function Home() {
     "@type": "WebSite",
     "mainEntityOfPage":{
     "@type":"WebPage",
-    "@id":"https://brunobarros.dev/en"
+    "@id":"https://brunobarros.dev/"
   },
     "image": {
     "@type": "ImageObject",

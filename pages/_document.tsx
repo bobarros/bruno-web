@@ -34,7 +34,10 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en-us">
-        <Head />
+        <Head>
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap&family=Libre+Baskerville&display=swa" rel="stylesheet" />
+        </Head>
         <body className="night">
           <Main />
           <NextScript />
