@@ -22,7 +22,7 @@ export const Text = styled.div`
   width: 75%;
   margin: 0 auto;
   color: var(--color-font);
-  font-weight: 300;
+  font-weight: 400;
 
   @media only screen and (max-width: 500px) {
     width: 85%;

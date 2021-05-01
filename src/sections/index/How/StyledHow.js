@@ -10,7 +10,7 @@ export const Wrap = styled.section`
   padding-bottom: 4rem;
   font-size: 2rem;
   line-height: 2.4rem;
-  font-weight: 300;
+  font-weight: 400;
 
   h3 {
     font-size: 2rem;

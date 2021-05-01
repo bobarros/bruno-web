@@ -47,6 +47,13 @@ export default function Home() {
   return (
     <BaseLayout>
       <Head>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" />
+        <noscript>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" />
+        </noscript>
+
         <meta     httpEquiv="Content-Type"      content="text/html; charset=UTF-8" />
         <meta     name="viewport"               content="width=device-width,minimum-scale=1,initial-scale=1" />
         <meta     httpEquiv="X-UA-Compatible"   content="ie=edge" />

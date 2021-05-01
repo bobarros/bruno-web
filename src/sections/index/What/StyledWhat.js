@@ -21,7 +21,7 @@ export const BlocoTexto = styled.div`
   padding: 8rem 0rem 4rem 0rem;
   font-size: 1.6rem;
   line-height: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0 auto;
   width: 60rem;
 

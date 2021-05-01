@@ -38,7 +38,7 @@ export const TextWrap = styled.div`
 export const HeaderLinhaStrong = styled.p`
   font-size: 3.6rem;
   line-height: 3.8rem;
-  font-weight: 500;
+  font-weight: 700;
   font-family: "JetBrains Mono";
 
   @media only screen and (max-width: 700px) {
@@ -59,7 +59,7 @@ export const HeaderLinhaStrong = styled.p`
 export const HeaderLinhaLight = styled.div`
   font-size: 16px;
   line-height: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   left: 0.4rem;
   margin-top: 1rem;
