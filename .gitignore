@@ -36,4 +36,4 @@ yarn-error.log*
 
 # others
 .txt
-/functions/cacheData
+src/functions/cacheData

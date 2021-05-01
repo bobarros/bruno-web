@@ -2,10 +2,6 @@
 
 import Link from "next/link";
 
-/////////////////////////////////////////////////////////// Third Parties
-
-import { useSwipeable } from "react-swipeable";
-
 /////////////////////////////////////////////////////////// Styled Components
 
 import {
@@ -61,16 +57,6 @@ const LinkMobile = ({ href, children }) => {
 const Nav = () => {  
 
   /////////////////// Swipeable config
-  const handlers = useSwipeable({
-    onSwipedDown: () => {
-      moveUp();
-    },
-    delta: 20,
-    preventDefaultTouchmoveEvent: false,
-    trackTouch: true,
-  });
-
-  /////////////////// Swipeable config
   return (
     <>
       <Night />
@@ -84,7 +70,7 @@ const Nav = () => {
           <LinkDesk href="/contact">Contact</LinkDesk>
         </Links>
       </NavBar>
-      <MovelNav id="movelNav" {...handlers} style={{ touchAction: "pan-x" }} >
+      <MovelNav id="movelNav">
         <Sections>
           <a target="_blank" rel="noopener" href="https://github.com/bobarros">github<GitSVG /></a>
           <Hamburguer id="navButton" onClick={moveUp} >
