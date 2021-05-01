@@ -51,17 +51,16 @@ After running the development server the site should be running on https://local
 A quick look at the folder structure of this project.
 
     ├── pages
-         ├───blog
-         ├───case-studies
-         └───json
     ├── public
-         └───fonts
-         └───img
+         ├───fonts
+         ├───img
          └───pdf
     └── src
         ├───components
-        ├───html
+        ├───functions
         ├───layouts
+        ├───pagesTrees
+        ├───sections
         ├───styles
         └───svg
 

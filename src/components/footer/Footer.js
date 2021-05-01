@@ -5,16 +5,18 @@ import Link from "next/link";
 ///////////////////////////////////////////////////////////// Local Components
 
 import LogoSVG from "svg/LogoSVG";
+import GitSVG from "svg/GitSVG";
+import EmailSVG from "svg/EmailSVG";
 
 ///////////////////////////////////////////////////////////// Styled Components
 
 import {
   Wrap,
   Text,
-  Disclaimer,
   Credits,
   Links,
-  Logo
+  Logo,
+  SocialIcons
 } from 'components/footer/StyledFooter';
 
 /////////////////////////////////////////////////////////////// Prep Components
@@ -36,7 +38,7 @@ const Footer = () => {
     <Wrap id="footer" className="nao-imprimir">
       <Link href="/">
         <Logo href="/">
-          <LogoSVG />
+          logo bob<LogoSVG />
         </Logo>
       </Link>
       <Links>
@@ -53,6 +55,19 @@ const Footer = () => {
           <p><a target="_blank" rel="noopener" href="https://nextjs.org/">NEXT.<span>JS</span></a></p>
         </Credits>
       </Text>
+      <SocialIcons>
+        <a
+          target="_blank"
+          rel="noopener"
+          href="https://github.com/bobarros"
+        >
+          <GitSVG />
+        </a>
+        <a href="mailto:brunobarros@ideias.dev">
+          <EmailSVG />
+        </a>
+
+      </SocialIcons>
     </Wrap>
   );
 };

@@ -113,6 +113,7 @@ export const Logo = styled.a`
   text-align: center;
   padding: 5rem 0;
   display: block;
+  font-size: 0;
 
   svg {
     box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.75);
@@ -120,6 +121,28 @@ export const Logo = styled.a`
     width: 12rem;
     height: 12rem;
     background-color: #fff;
+  }
+`;
+
+export const SocialIcons = styled.div`
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0;
+
+  @media only screen and (max-width: 901px) {
+    display: none;
+  }
+
+  a:last-child {
+    margin-left: 4rem;
+  }
+
+  svg {
+    width: 4rem;
+    height: 4rem;
+    fill: var(--color-font);
   }
 `;
 

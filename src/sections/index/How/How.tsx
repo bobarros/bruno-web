@@ -1,7 +1,22 @@
-
 //////////////////////////////////////////////////////////////////////// Next
 
 import Link from "next/link";
+
+/////////////////////////////////////////////////////////// Styled Components
+
+import {
+  Wrap,
+  Solucoes,
+  Grupo,
+  GrupoIcones
+} from "sections/index/How/StyledHow.js";
+
+import {
+  BlocoTexto,
+  AberturaTexto,
+  Paragrafo,
+  VerMais
+} from "sections/index/What/StyledWhat.js";
 
 ///////////////////////////////////////////////////////////// Local Components
 
@@ -18,39 +33,38 @@ import PhotoShopSVG from "svg/PhotoShopSVG";
 
 const How = () => {
   return (
-    <section className="how">
-      <div className="howBloco">
-        <div className="blocoTexto">
-          <h2 className="aberturaTexto">The cards up my sleeve</h2>
-          <div className="solucoes">
-            <div className="grupo">
-              <div className="grupoIcones">
-                <HtmlSVG />
-                <CssSVG />
-                <PhotoShopSVG />
-                <NextSVG />
-                <MongoSVG />
-                <JsSVG />
-                <FigmaSVG />
-                <EltySVG />
-              </div>
-            </div>
-          </div>
-          <p className="paragrafo">
-          I like to learn and there's a lot that I can do. Unfortunately, there are way more things that I just can't do.
-          </p>
-          <p className="paragrafo">
-            Some clients like to go more extensive and know what features I am familiar with. Here it is!
-          </p>
-        </div>
-      </div>
-
-      <div className="verMais verMaisHabilidades">
+    <Wrap>
+      <BlocoTexto>
+        <AberturaTexto>The cards up my sleeve</AberturaTexto>
+        <Solucoes>
+          <Grupo>
+            <GrupoIcones>
+              <HtmlSVG />
+              <CssSVG />
+              <PhotoShopSVG />
+              <NextSVG />
+              <MongoSVG />
+              <JsSVG />
+              <FigmaSVG />
+              <EltySVG />
+            </GrupoIcones>
+          </Grupo>
+        </Solucoes>
+        <Paragrafo>
+          I like to learn and there's a lot that I can do. Unfortunately, there
+          are way more things that I just can't do.
+        </Paragrafo>
+        <Paragrafo>
+          Some clients like to go more extensive and know what features I am
+          familiar with. Here it is!
+        </Paragrafo>
+      </BlocoTexto>
+      <VerMais>
         <Link href="/skills">
           <a>Skills</a>
         </Link>
-      </div>
-    </section>
+      </VerMais>
+    </Wrap>
   );
 };
 

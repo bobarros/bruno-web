@@ -15,5 +15,6 @@ export const Icons = styled.div`
     height: 3rem;
     width: 3rem;
     transform-origin: center;
+    position: absolute;
   }
 `;

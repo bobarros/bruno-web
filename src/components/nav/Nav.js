@@ -1,7 +1,3 @@
-/////////////////////////////////////////////////////////// React
-
-import { useEffect } from "react";
-
 /////////////////////////////////////////////////////////// Next
 
 import Link from "next/link";
@@ -25,7 +21,7 @@ import {
 
 /////////////////////////////////////////////////////////// Local Components
 
-import InstagramSVG from "svg/InstagramSVG";
+import GitSVG from "svg/GitSVG";
 import EmailSVG from "svg/EmailSVG";
 import LogoSVG from "svg/LogoSVG";
 import Logo from "components/logo/Logo";
@@ -62,43 +58,7 @@ const LinkMobile = ({ href, children }) => {
 
 /////////////////////////////////////////////////////////// Main Component
 
-const Nav = () => {
-
-  useEffect(() => {
-    const d = document;
-    let sol = d.getElementById("sol").classList;
-    let lua = d.getElementById("lua").classList;
-
-    let option = "day";
-
-    let status = localStorage.getItem("darkModeBruno");
-    if (status === "true" || status === null) {
-      option = "night";
-      sol.toggle("notShow");
-      lua.toggle("show");
-      d.getElementById("cabeca").classList.add("cabecaRotate");
-      d.getElementById("fechado").style.opacity = "1";
-      d.getElementById("luz").classList.add("toBlink");
-      d.getElementById("esquerdo").style.opacity = "0";
-    } else {
-      sol.toggle("show");
-      lua.toggle("notShow");
-      d.getElementById("cabeca").classList.remove("cabecaRotate");
-      d.getElementById("fechado").style.opacity = "0";
-      d.getElementById("luz").classList.remove("toBlink");
-      d.getElementById("esquerdo").style.opacity = "1";
-    }
-
-    if (status === null) {
-      localStorage.setItem("darkModeBruno", "true");
-    }
-
-    if (option === "day") {
-      d.body.classList.remove("night");
-      d.body.classList.add(option);
-    }
-
-  }, []);
+const Nav = () => {  
 
   /////////////////// Swipeable config
   const handlers = useSwipeable({
@@ -113,10 +73,10 @@ const Nav = () => {
   /////////////////// Swipeable config
   return (
     <>
+      <Night />
+      <Logo />
+      <ToTop />
       <NavBar>
-        <Night />
-        <Logo />
-        <ToTop />
         <Links>
           <LinkDesk href="/">Home</LinkDesk>
           <LinkDesk href="/skills">Skills</LinkDesk>
@@ -124,28 +84,15 @@ const Nav = () => {
           <LinkDesk href="/contact">Contact</LinkDesk>
         </Links>
       </NavBar>
-      <MovelNav
-        id="movelNav"
-        {...handlers}
-        style={{ touchAction: "pan-x" }}
-      >
+      <MovelNav id="movelNav" {...handlers} style={{ touchAction: "pan-x" }} >
         <Sections>
-          <a
-            target="_blank"
-            rel="noopener"
-            href="https://www.instagram.com/talvezobruno"
-          >
-            instagram<InstagramSVG />
-          </a>
-          <Hamburguer
-            id="navButton"
-            onClick={moveUp}
-          >
+          <a target="_blank" rel="noopener" href="https://github.com/bobarros">github<GitSVG /></a>
+          <Hamburguer id="navButton" onClick={moveUp} >
             <span></span>
             <span></span>
             <span></span>
           </Hamburguer>
-          <a href="mailto:brunobarros@ideias.dev" >
+          <a href="mailto:brunobarros@ideias.dev">
             email<EmailSVG />
           </a>
         </Sections>
@@ -166,7 +113,6 @@ const Nav = () => {
         <LogoMobile href="/">
           logo bruno<LogoSVG />
         </LogoMobile>
-
       </MovelNav>
     </>
   );

@@ -1,21 +1,6 @@
 @import "fonts";
 
-// Cores
-$color-primary: #4267b2;
-$color-secondary: #f45b69;
-$color-tertiary: #3ea98e;
-$color-quaternary: #f4a261;
-
-$bp-largest: 75em; //1200px
-$bp-extra-large: 65em; //1040px
-$bp-large: 56.25em; //900px
-$bp-medium: 43.75em; //700px
-$bp-small: 31.25em; //500px
-$bp-extra-small: 28em; //448px
-$bp-smallest: 22em; //350px
-
 .night {
-  -webkit-font-smoothing: antialiased;
   --color-font: #efefef;
   --color-background: #121212;
   --color-background-light-1: #323232;
@@ -41,6 +26,7 @@ $bp-smallest: 22em; //350px
   --hash-habilidades: rgb(56, 56, 211);
 }
 
+
 // CSS Base
 * {
   margin: 0;
@@ -57,11 +43,11 @@ html {
   box-sizing: border-box;
   font-size: 67.5%;
 
-  @media only screen and (max-width: $bp-small) {
+  @media only screen and (max-width: 500px) {
     font-size: 55%;
   }
 
-  @media only screen and (max-width: $bp-smallest) {
+  @media only screen and (max-width: 350px) {
     font-size: 48%;
   }
 }

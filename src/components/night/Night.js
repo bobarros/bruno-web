@@ -1,3 +1,7 @@
+/////////////////////////////////////////////////////////// React
+
+import { useEffect } from "react";
+
 /////////////////////////////////////////////////////////// Styled Components
 
 import {
@@ -11,52 +15,101 @@ import SunSVG from 'svg/SunSVG';
 
 /////////////////////////////////////////////////////////// Functions
 
-const toNight = () => {
-  const d = document;
-  let status = localStorage.getItem("darkModeBruno");
-  if (status === "true") {
+/////////////// this handles the avatar animation when theme changes
+const changeAvatar = (isDay) => {
+  try {
+    const d = document;
+
+    const avatarHead = d.getElementById("cabeca");
+    const avatarClosedEyes = d.getElementById("fechado");
+    const avatarLight = d.getElementById("luz");
+    const avatarLeftEye = d.getElementById("esquerdo");
+
+    if (isDay) {
+      avatarHead.classList.remove("cabecaRotate");
+      avatarClosedEyes.style.opacity = "0";
+      avatarLight.classList.remove("toBlink")
+      avatarLeftEye.style.opacity = "1";
+    } else {
+      avatarHead.classList.add("cabecaRotate");
+      avatarClosedEyes.style.opacity = "1";
+      avatarLight.classList.add("toBlink")
+      avatarLeftEye.style.opacity = "0";
+    }
+  } catch (error) {
+    console.log("Bruno's not here! Where, then!?");
+  }
+}
+
+/////////////// this handles the theme option in storage
+const changeStorageData = (status) => {
+  if (status) {
     localStorage.removeItem("darkModeBruno");
     localStorage.setItem("darkModeBruno", "false");
-    if (d.getElementById("cabeca")) {
-      d.getElementById("cabeca").classList.remove("cabecaRotate");
-      d.getElementById("fechado").style.opacity = "0";
-      d.getElementById("luz").classList.remove("toBlink")
-      d.getElementById("esquerdo").style.opacity = "1";
-    }
-
+    changeAvatar(status);
   } else {
     localStorage.removeItem("darkModeBruno");
     localStorage.setItem("darkModeBruno", "true");
-    if (d.getElementById("cabeca")) {
-      d.getElementById("cabeca").classList.add("cabecaRotate");
-      d.getElementById("fechado").style.opacity = "1";
-      d.getElementById("luz").classList.add("toBlink")
-      d.getElementById("esquerdo").style.opacity = "0";
-    }
-
+    changeAvatar(status);
   }
+}
 
-  let classesBody = d.body.classList;
-  let sol = d.getElementById("sol").classList;
-  let lua = d.getElementById("lua").classList;
+/////////////// this handles the colors changin for each theme
+const changeTheme = (momentOfChange, isDarkMode) => {
 
-  classesBody.toggle("night");
-  classesBody.toggle("day");
-  sol.toggle("show");
-  sol.toggle("notShow");
-  lua.toggle("show");
-  lua.toggle("notShow");
+  const d = document;
+  const classesBody = d.body.classList;
+  const sun = d.getElementById("sun").classList;
+  const moon = d.getElementById("moon").classList;
+
+  if (momentOfChange === "click") {
+    classesBody.toggle("night");
+    classesBody.toggle("day");
+    sun.toggle("show");
+    sun.toggle("notShow");
+    moon.toggle("show");
+    moon.toggle("notShow");
+  } else if (momentOfChange === "toDark") {
+    sun.toggle("notShow");
+    moon.toggle("show");
+    classesBody.add("night");
+    classesBody.remove("day");
+    changeAvatar(isDarkMode);
+  } else if (momentOfChange === "toDay") {
+    sun.toggle("show");
+    moon.toggle("notShow");
+    classesBody.remove("night");
+    classesBody.add("day");
+    changeAvatar(isDarkMode);
+  }
+}
+
+/////////////// this handles the click event in night/day button
+const toNight = () => {
+  const status = localStorage.getItem("darkModeBruno") === 'true';
+  changeStorageData(status);
+  changeTheme("click");
 };
 
 /////////////////////////////////////////////////////////// Main Component
 
-const Nigth = () => {
+const Night = () => {
+
+  useEffect(() => {
+    const status = localStorage.getItem("darkModeBruno");
+    if (status === null) {
+      localStorage.setItem("darkModeBruno", "true"); /// night is the standard mode
+    }
+    if (status === "true" || status === null) {
+      changeTheme("toDark", false);
+    } else {
+      changeTheme("toDay", true);
+    }
+  }, []);
+
   return (
     <div>
-      <Icons
-        onClick={toNight}
-        title="Alternar entre modo diurno/noturno"
-      >
+      <Icons onClick={toNight} title="Alternar entre modo diurno/noturno">
         <SunSVG />
         <MoonSVG />
       </Icons>
@@ -64,4 +117,4 @@ const Nigth = () => {
   );
 };
 
-export default Nigth;
+export default Night;
