@@ -70,6 +70,10 @@ A quick look at the folder structure of this project.
 **2.** Styled Components for styling \
 **3.** Typescript
 
+## Components
+
+Components directory have both typescript and js files.
+
 ## :v: Reach me
 
 Feel free to tell me about errors or improvements.

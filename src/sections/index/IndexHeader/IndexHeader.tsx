@@ -19,7 +19,7 @@ const IndexHeader = () => {
     <Header>
       <TextWrap>
         <HeaderLinhaStrong>Hi, I'm Bruno Barros</HeaderLinhaStrong>
-        <HeaderLinhaLight>a Web Developer that finds joy bulding great things.</HeaderLinhaLight>
+        <HeaderLinhaLight>a Web Developer that finds joy in bulding great things.</HeaderLinhaLight>
       </TextWrap>
       <Avatar>
         <BrunoAvatar />
