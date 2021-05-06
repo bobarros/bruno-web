@@ -265,3 +265,54 @@ h6 {
 .underline {
   text-decoration: underline !important;
 }
+
+.toBlink {
+  animation-name: blinking;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+@keyframes blinking {
+  15% {
+    opacity: 0.15;
+  }
+  21% {
+    opacity: 0.05;
+  }
+  30% {
+    opacity: 0.25;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  45% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.08;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#cabeca {
+  transform-origin: center;
+  transform: rotate3d(1, 1, 1, 0deg) translate(0, 0);
+  transition: all 0.4s;
+}
+
+.cabecaRotate {
+  transform: rotate3d(1, 1, 1, 20deg) translate(18px, 3px) !important;
+}
+
+.nightDireito {
+  transform-origin: center;
+  transform-box: fill-box;
+  transform: scale3d(0.8, 1.1, 1);
+}
