@@ -15,26 +15,27 @@ import {
   AberturaTexto,
   Paragrafo,
   ImagemWrap,
-  VerMais
+  VerMais,
 } from "sections/index/What/StyledWhat";
 
 /////////////////////////////////////////////////////////////////// Component
 
 const Wait = () => {
-  const [loadImage, setLoad] = useState(false);
-  const [finalWidth, setWidth] = useState(0);
-  const [finalHeight, setHeight] = useState(0);
+  const [load, setLoad] = useState("notReady");
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    const elHeight = document.getElementById("propImage") as HTMLDivElement;
-    const elWidth = document.getElementById("propImage") as HTMLDivElement;
-
     ////any calc to set the height and width that I want.
-
-    setHeight(elHeight.offsetHeight);
-    setWidth(elWidth.offsetWidth);
-    setLoad(true);
-  }, []);
+    if (width === 0 || height === 0) {
+      const element = document.getElementById("propIndex") as HTMLDivElement;
+      setHeight(element.offsetHeight);
+      setWidth(element.offsetWidth);
+      setLoad("again" + Math.random());
+    } else {
+      setLoad("ready");
+    }
+  }, [load]);
 
   return (
     <Wrap>
@@ -50,7 +51,7 @@ const Wait = () => {
       </BlocoTexto>
       <Link href="/portfolio">
         <ImagemWrap>
-          {!loadImage && (
+          {!(load === "ready") && (
             <picture>
               <source
                 media="(max-width: 600px)"
@@ -61,20 +62,18 @@ const Wait = () => {
                 srcSet="/svg/black_port_desk.svg"
               />
               <img
-                id="propImage"
+                id="propIndex"
                 src="/img/black_port_desk.svg"
                 alt="bruno's portfolio image with three computers showing different websites"
               />
             </picture>
           )}
-          {loadImage && (
+          {load === "ready" && (
             <Image
-              width={finalWidth}
-              height={finalHeight}
+              width={width}
+              height={height}
               objectFit="cover"
-              src={
-                finalWidth > 601 ? `/img/port_desk.jpg` : `/img/port_mobile.jpg`
-              }
+              src={width > 601 ? `/img/port_desk.jpg` : `/img/port_mobile.jpg`}
               alt="bruno's portfolio image with three computers showing different websites"
             />
           )}

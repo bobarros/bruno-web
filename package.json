@@ -13,7 +13,7 @@
     "build": "next build",
     "sitemap": "node components/sitemap.js",
     "start": "next start",
-    "export": "next build && next export",
+    "export": "next build",
     "serve": "next build && next start"
   },
   "dependencies": {

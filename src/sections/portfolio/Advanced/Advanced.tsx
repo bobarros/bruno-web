@@ -22,21 +22,21 @@ import {
 
 const Advanced = () => {
 
-  const [loadIntro, setLoad] = useState(false);
-  const [introWidth, setWidth] = useState(0);
-  const [introHeight, setHeight] = useState(0);
+  const [load, setLoad] = useState("notReady");
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
-     
-    const elHeight = document.getElementById("imageAdvanced") as HTMLDivElement;
-    const elWidth = document.getElementById("imageAdvanced") as HTMLDivElement;
-
     ////any calc to set the height and width that I want.
-
-    setHeight(elHeight.offsetHeight);
-    setWidth(elWidth.offsetWidth);
-    setLoad(true);
-  }, []);
+    if (width === 0 || height === 0) {
+      const element = document.getElementById("imagePrep") as HTMLDivElement;
+      setHeight(element.offsetHeight);
+      setWidth(element.offsetWidth); 
+      setLoad("again" + Math.random());
+    } else {
+      setLoad("ready")
+    }
+  }, [load]);
 
   return (
     <div>
@@ -85,18 +85,18 @@ const Advanced = () => {
             href="https://neymar-new.ideias.dev/en"
           >
             example of website advanced
-           {!loadIntro && (
+           {!(load === "ready") && (
               <img
-                id="imageAdvanced"
+                id="imagePrep"
                 src="/svg/project.svg"
                 alt="Office table full of devices showing an website with neymar face"
               />
             )}
-            {loadIntro && (
+            {load === "ready" && (
               <ImageProject>
                 <Image
-                  width={introWidth}
-                  height={introHeight}
+                  width={width}
+                  height={height}
                   src="/img/neymar.jpg"
                   alt="Office table full of devices showing an website with neymar face"
                 />
@@ -136,11 +136,11 @@ const Advanced = () => {
             href="https://circus-berlin-bobarros.vercel.app/"
           >
             example of website advanced
-            {loadIntro && (
+            {load && (
               <ImageProject>
                 <Image
-                  width={introWidth}
-                  height={introHeight}
+                  width={width}
+                  height={height}
                   src="/img/circus.jpg"
                   alt="screen with an example of advanced website of a hotel network"
                 />

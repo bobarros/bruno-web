@@ -18,20 +18,21 @@ import {
 /////////////////////////////////////////////////////////////////// Component
 
 const Intro = () => {
-  const [loadIntro, setLoad] = useState(false);
-  const [introWidth, setWidth] = useState(0);
-  const [introHeight, setHeight] = useState(0);
+  const [load, setLoad] = useState("notReady");
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    const elHeight = document.getElementById("introImages") as HTMLDivElement;
-    const elWidth = document.getElementById("introImages") as HTMLDivElement;
-
     ////any calc to set the height and width that I want.
-
-    setHeight(elHeight.offsetHeight);
-    setWidth(elWidth.offsetWidth);
-    setLoad(true);
-  }, []);
+    if (width === 0 || height === 0) {
+      const element = document.getElementById("introPrep") as HTMLDivElement;
+      setHeight(element.offsetHeight);
+      setWidth(element.offsetWidth);
+      setLoad("again" + Math.random());
+    } else {
+      setLoad("ready");
+    }
+  }, [load]);
 
   return (
     <Wrap>
@@ -51,18 +52,18 @@ const Intro = () => {
           Brazil. For now.
         </Paragraph>
         <ImagemWrap>
-        Draw representing people building an website
-          {!loadIntro && (
+          Draw representing people building an website
+          {!(load === "ready") && (
             <img
-              id="introImages"
+              id="introPrep"
               src="/svg/portblack.svg"
               alt="Draw representing people building an website in the screen as if was a house, with bricks"
             />
           )}
-          {loadIntro && (
+          {load === "ready" && (
             <Image
-              width={introWidth}
-              height={introHeight}
+              width={width}
+              height={height}
               objectFit="cover"
               src="/img/port1.png"
               alt="Draw representing people building an website in the screen as if was a house, with bricks"
@@ -75,11 +76,11 @@ const Intro = () => {
           information architecture, etc.
         </Paragraph>
         <ImagemWrap>
-        Draw of smartphone full of hearts and comments
-          {loadIntro && (
+          Draw of smartphone full of hearts and comments
+          {load === "ready" && (
             <Image
-              width={introWidth}
-              height={introHeight}
+              width={width}
+              height={height}
               objectFit="cover"
               src="/img/port2.png"
               alt="Draw of smartphone full of hearts and comments"

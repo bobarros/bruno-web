@@ -21,21 +21,21 @@ import {
 /////////////////////////////////////////////////////////////////// Component
 
 const Basic = () => {
-  const [loadIntro, setLoad] = useState(false);
-  const [introWidth, setWidth] = useState(0);
-  const [introHeight, setHeight] = useState(0);
+  const [load, setLoad] = useState("notReady");
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
   useEffect(() => {
-     
-    const elHeight = document.getElementById("imageBasic") as HTMLDivElement;
-    const elWidth = document.getElementById("imageBasic") as HTMLDivElement;
-
     ////any calc to set the height and width that I want.
-
-    setHeight(elHeight.offsetHeight);
-    setWidth(elWidth.offsetWidth);
-    setLoad(true);
-  }, []);
+    if (width === 0 || height === 0) {
+      const element = document.getElementById("basicPrep") as HTMLDivElement;
+      setHeight(element.offsetHeight);
+      setWidth(element.offsetWidth); 
+      setLoad("again" + Math.random());
+    } else {
+      setLoad("ready")
+    }
+  }, [load]);
 
   return (
     <div>
@@ -77,18 +77,18 @@ const Basic = () => {
             href="https://next-public-six.vercel.app/"
           >
             Website with a black man dancing in the background
-            {!loadIntro && (
+            {!(load === "ready") && (
               <img
-                id="imageBasic"
+                id="basicPrep"
                 src="/svg/project.svg"
                 alt="Website with a black man dancing in the background and in a beautiful living room"
               />
             )}
-            {loadIntro && (
+            {load === "ready" && (
               <ImageProject>
                 <Image
-                  width={introWidth}
-                  height={introHeight}
+                  width={width}
+                  height={height}
                   src="/img/arch.jpg"
                   alt="Website with a black man dancing in the background and in a beautiful living room"
                 />
