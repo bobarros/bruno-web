@@ -39,8 +39,7 @@ const Intro = () => {
       <TextBlock>
         <Paragraph>
           Here, I will explain what I have to offer. After that, you will find
-          projects where my <a href="/skills">skills</a> can be evaluated and
-          budget estimations for each job.
+          projects where my <a href="/skills">skills</a> can be evaluated.
         </Paragraph>
         <Paragraph>
           I stand out among others because I mix great developer skills with
