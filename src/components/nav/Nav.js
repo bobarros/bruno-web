@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////// Next
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 /////////////////////////////////////////////////////////// Styled Components
 
@@ -34,19 +35,19 @@ const moveUp = () => {
 
 /////////////////////////////////////////////////////////// Local Components
 
-const LinkDesk = ({ href, children }) => {
+const LinkDesk = ({ href, children, className }) => {
   return (
     <li>
-      <Link href={href}><a>{children}</a></Link>
+      <Link href={href}><a className={className}>{children}</a></Link>
     </li>
   )
 }
 
-const LinkMobile = ({ href, children }) => {
+const LinkMobile = ({ href, children, className }) => {
   return (
     <Item onClick={moveUp}>
       <Link href={href}>
-        <a>{children}</a>
+        <a className={className}>{children}</a>
       </Link>
     </Item>
   )
@@ -54,8 +55,9 @@ const LinkMobile = ({ href, children }) => {
 
 /////////////////////////////////////////////////////////// Main Component
 
-const Nav = () => {  
-
+const Nav = () => {
+  const router = useRouter();
+  console.log(router.pathname === "/skills")
   /////////////////// Swipeable config
   return (
     <>
@@ -64,10 +66,10 @@ const Nav = () => {
       <ToTop />
       <NavBar>
         <Links>
-          <LinkDesk href="/">Home</LinkDesk>
-          <LinkDesk href="/skills">Skills</LinkDesk>
-          <LinkDesk href="/portfolio">Portfolio</LinkDesk>
-          <LinkDesk href="/contact">Contact</LinkDesk>
+          <LinkDesk className={router.pathname === "/" ? "underline" : ""} href="/">Home</LinkDesk>
+          <LinkDesk className={router.pathname === "/skills" ? "underline" : ""} href="/skills">Skills</LinkDesk>
+          <LinkDesk className={router.pathname === "/portfolio" ? "underline" : ""} href="/portfolio">Porfolio</LinkDesk>
+          <LinkDesk className={router.pathname === "/contact" ? "underline" : ""} href="/contact">Contact</LinkDesk>
         </Links>
       </NavBar>
       <MovelNav id="movelNav">
@@ -83,16 +85,16 @@ const Nav = () => {
           </a>
         </Sections>
         <MenuMobile>
-          <LinkMobile href="/" >
+          <LinkMobile className={router.pathname === "/" ? "underline" : ""} href="/" >
             Home
           </LinkMobile>
-          <LinkMobile href="/skills" >
+          <LinkMobile className={router.pathname === "/skills" ? "underline" : ""} href="/skills" >
             Skills
           </LinkMobile>
-          <LinkMobile href="/portfolio" >
+          <LinkMobile className={router.pathname === "/portfolio" ? "underline" : ""} href="/portfolio" >
             Portfolio
           </LinkMobile>
-          <LinkMobile href="/contact" >
+          <LinkMobile className={router.pathname === "/contact" ? "underline" : ""} href="/contact" >
             Contact
           </LinkMobile>
         </MenuMobile>
