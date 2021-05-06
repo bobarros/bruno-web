@@ -1,4 +1,4 @@
-import "styles/index/main.scss";
+import "styles/global.scss";
 
 function MyApp(props:any) {  
   const { Component, pageProps } = props;

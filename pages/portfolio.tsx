@@ -12,6 +12,15 @@ import Basic from "../src/sections/portfolio/Basic/Basic";
 import Intermediate from "../src/sections/portfolio/Intermediate/Intermediate";
 import Advanced from "../src/sections/portfolio/Advanced/Advanced";
 
+  /////////////////////////////////////////////////////////// Styled Components
+
+  import {
+    Wait,
+    Paragraph,
+    PageName,
+    SkillsBlock
+  } from "../src/sections/shared/StyledShared";
+
 /////////////////////////////////////////////////////////////////// Component
 
 export default function Portfolio() {
@@ -51,20 +60,20 @@ export default function Portfolio() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredJSON }} />
       </Head>
       <Intro />
-      <section id="projetos" className="wait">
-        <div className="blocoTexto">
-          <h1 className="pageName">Portfolio</h1>
-          <p className="paragrafo">
+      <Wait id="projetos">
+        <SkillsBlock>
+          <PageName>Portfolio</PageName>
+          <Paragraph>
           Here are some examples from projects that I own. You may click on elements to be redirected to the published version.
-          </p>
-          <div className="projetos">
+          </Paragraph>
+          <>
             <Donts />
             <Basic />
             <Intermediate />
             <Advanced />
-          </div>
-        </div>
-      </section>
+          </>
+        </SkillsBlock>
+      </Wait>
     </BaseLayout>
   );
 }

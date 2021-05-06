@@ -2,6 +2,18 @@ import styled from "styled-components";
 
 /////////////////////////////////////////////////////////
 
+export const Wait = styled.section`
+  width: 100%;
+  background-color: var(--color-background);
+  color: var(--color-font);
+  box-shadow: 0 5px 20px 5px var(--shadow);
+  padding-bottom: 4rem;
+
+  &:nth-child(even) {
+    background-color: var(--color-background-light-1);
+  }
+`;
+
 export const TextBlock = styled.div`
   padding: 0rem 0rem 4rem 0rem;
   font-size: 1.6rem;
@@ -23,6 +35,13 @@ export const TitleSub = styled.h2`
   line-height: 3.4rem;
   padding: 3rem 0;
   font-weight: 700;
+`;
+
+export const PageName = styled.h1`
+  font-size: 5rem;
+  line-height: 10rem;
+  margin: 2rem 0;
+  text-align: center;
 `;
 
 export const LevelName = styled.p`
@@ -105,4 +124,20 @@ export const Estimation = styled.div`
 
 export const ImgAchor = styled.a`
   font-size: 0;
+`;
+
+export const SkillsBlock = styled.div`
+  padding: 8rem 0rem 4rem 0rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 400;
+  margin: 0 auto;
+  width: 60rem;
+
+  @media only screen and (max-width: 700px) {
+    padding: 8rem 1.5rem 4rem 1.5rem;
+    font-size: 14px;
+    line-height: 22px;
+    width: 100%;
+  }
 `;
