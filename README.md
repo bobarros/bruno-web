@@ -8,7 +8,7 @@
 
 ![Bruno Barros Site Preview](./public/img/web_demo.png)
 
-*Obs: If you are using this site or any of it's components for your own portfolio site, I would be very glad if you could give some credits to me in your footer*
+*Obs: If you are using this site or any of it's components for your own portfolio site, I would be very grateful if you could give some credits to me in your footer*
 
 ## :rocket: Quick start
 
@@ -55,9 +55,9 @@ A quick look at the folder structure of this project.
          ├───fonts
          ├───img
          └───pdf
+         └───svg
     └── src
         ├───components
-        ├───functions
         ├───layouts
         ├───pagesTrees
         ├───sections
