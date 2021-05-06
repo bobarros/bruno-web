@@ -66,7 +66,7 @@ const Nav = () => {
         <Links>
           <LinkDesk href="/">Home</LinkDesk>
           <LinkDesk href="/skills">Skills</LinkDesk>
-          <LinkDesk href="/portifolio">Porfolio</LinkDesk>
+          <LinkDesk href="/portfolio">Porfolio</LinkDesk>
           <LinkDesk href="/contact">Contact</LinkDesk>
         </Links>
       </NavBar>

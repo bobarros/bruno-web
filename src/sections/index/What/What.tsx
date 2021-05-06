@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-//////////////////////////////////////////////////////////////////////// Next
+//////////////////////////////////////////////////////////////////////// React
 
 import { useEffect, useState } from "react";
 
@@ -16,7 +16,7 @@ import {
   Paragrafo,
   ImagemWrap,
   VerMais
-} from "sections/index/What/StyledWhat.js";
+} from "sections/index/What/StyledWhat";
 
 /////////////////////////////////////////////////////////////////// Component
 
@@ -48,21 +48,21 @@ const Wait = () => {
           button below.
         </Paragrafo>
       </BlocoTexto>
-      <Link href="/portifolio">
+      <Link href="/portfolio">
         <ImagemWrap>
           {!loadImage && (
             <picture>
               <source
                 media="(max-width: 600px)"
-                srcSet="/img/black_port_mobile.png"
+                srcSet="/svg/black_port_mobile.svg"
               />
               <source
                 media="(min-width: 601px)"
-                srcSet="/img/black_port_desk.png"
+                srcSet="/svg/black_port_desk.svg"
               />
               <img
                 id="propImage"
-                src="/img/black_port_desk.png"
+                src="/img/black_port_desk.svg"
                 alt="bruno's portfolio image with three computers showing different websites"
               />
             </picture>
@@ -75,13 +75,13 @@ const Wait = () => {
               src={
                 finalWidth > 601 ? `/img/port_desk.jpg` : `/img/port_mobile.jpg`
               }
-              alt="teste"
+              alt="bruno's portfolio image with three computers showing different websites"
             />
           )}
         </ImagemWrap>
       </Link>
       <VerMais>
-        <Link href="/portifolio">My Portfolio</Link>
+        <Link href="/portfolio">My Portfolio</Link>
       </VerMais>
     </Wrap>
   );

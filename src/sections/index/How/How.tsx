@@ -9,14 +9,14 @@ import {
   Solucoes,
   Grupo,
   GrupoIcones
-} from "sections/index/How/StyledHow.js";
+} from "sections/index/How/StyledHow";
 
 import {
   BlocoTexto,
   AberturaTexto,
   Paragrafo,
   VerMais
-} from "sections/index/What/StyledWhat.js";
+} from "sections/index/What/StyledWhat";
 
 ///////////////////////////////////////////////////////////// Local Components
 
