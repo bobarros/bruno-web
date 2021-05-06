@@ -47,10 +47,6 @@ const Intro = () => {
           great design fundamentals. I can build a website with quality and very
           quickly on my own.
         </Paragraph>
-        <Paragraph>
-          The USD budgets seems so low because I'm charging the same as I do in
-          Brazil. For now.
-        </Paragraph>
         <ImagemWrap>
           Draw representing people building an website
           {!(load === "ready") && (
