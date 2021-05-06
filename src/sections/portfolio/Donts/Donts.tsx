@@ -1,35 +1,39 @@
-/////////////////////////////////////////////////////////// Styled Components
+  /////////////////////////////////////////////////////////// Styled Components
 
-import { ImagemWrap } from "sections/index/What/StyledWhat";
+import {
+  TextBlock,
+  Paragraph,
+  TitleSub 
+} from "../../shared/StyledShared";
 
-/////////////////////////////////////////////////////////////////// Component
+  /////////////////////////////////////////////////////////////////// Component
 
 const Donts = () => {
     return (
-    <div className="projetos__bloco">
-      <h2 className="projetos__subtitulo">What I don't do</h2>
-      <p className="projetos__paragrafo">
+    <TextBlock>
+      <TitleSub>What I don't do</TitleSub>
+      <Paragraph>
         To save your time, it's important to know projects that I don't work.
-      </p>
-      <p className="projetos__paragrafo">
+      </Paragraph>
+      <Paragraph>
         I'm not a software developer of all sorts. I will not build complex
-        services for your site, like internal financial transactions.
-      </p>
-      <p className="projetos__paragrafo">
-        A good example would be a website with some managing small business
-        solutions.
-      </p>
-      <p className="projetos__paragrafo">
+        services for your site, like crypto applications.
+      </Paragraph>
+      <Paragraph>
+        Another good example would be a website with some small business managing
+        solution.
+      </Paragraph>
+      <Paragraph>
         If your project contains logged areas, e-commerce, etc, I can build the
         way that you deliver the services and make the integration. I have no
-        interest in building the services.
-      </p>
-      <p className="projetos__paragrafo">
-        I don't use WordPress, but I can use the content that is already hosted
+        interest in building some custom advanced system.
+      </Paragraph>
+      <Paragraph>
+        I also don't use WordPress, but I can use the content that is already hosted
         there, which I will access via API if there is already a current
         website.
-      </p>
-    </div>
+      </Paragraph>
+    </TextBlock>
   );
 };
 

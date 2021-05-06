@@ -18,13 +18,14 @@ import {
 /////////////////////////////////////////////////////////////////// Component
 
 const Intro = () => {
-  const [loadImage, setLoad] = useState(false);
-  const [finalWidth, setWidth] = useState(0);
-  const [finalHeight, setHeight] = useState(0);
+  const [loadIntro, setLoad] = useState(false);
+  const [introWidth, setWidth] = useState(0);
+  const [introHeight, setHeight] = useState(0);
 
   useEffect(() => {
-    const elHeight = document.getElementById("port1image") as HTMLDivElement;
-    const elWidth = document.getElementById("port1image") as HTMLDivElement;
+    console.log("fire");
+    const elHeight = document.getElementById("introImages") as HTMLDivElement;
+    const elWidth = document.getElementById("introImages") as HTMLDivElement;
 
     ////any calc to set the height and width that I want.
 
@@ -52,17 +53,17 @@ const Intro = () => {
         </Paragraph>
         <Paragraph>
           <ImagemWrap>
-            {!loadImage && (
+            {!loadIntro && (
               <img
-                id="port1image"
+                id="introImages"
                 src="/svg/portblack.svg"
                 alt="bruno's portfolio image with three computers showing different websites"
               />
             )}
-            {loadImage && (
+            {loadIntro && (
               <Image
-                width={finalWidth}
-                height={finalHeight}
+                width={introWidth}
+                height={introHeight}
                 objectFit="cover"
                 src="/img/port1.png"
                 alt="teste"
@@ -78,10 +79,10 @@ const Intro = () => {
 
         <Paragraph>
           <ImagemWrap>
-            {loadImage && (
+            {loadIntro && (
              <Image
-             width={finalWidth}
-             height={finalHeight}
+             width={introWidth}
+             height={introHeight}
              objectFit="cover"
              src="/img/port2.png"
              alt="teste"
