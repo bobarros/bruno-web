@@ -51,11 +51,12 @@ const Intro = () => {
           Brazil. For now.
         </Paragraph>
         <ImagemWrap>
+        Draw representing people building an website
           {!loadIntro && (
             <img
               id="introImages"
               src="/svg/portblack.svg"
-              alt="bruno's portfolio image with three computers showing different websites"
+              alt="Draw representing people building an website in the screen as if was a house, with bricks"
             />
           )}
           {loadIntro && (
@@ -64,7 +65,7 @@ const Intro = () => {
               height={introHeight}
               objectFit="cover"
               src="/img/port1.png"
-              alt="teste"
+              alt="Draw representing people building an website in the screen as if was a house, with bricks"
             />
           )}
         </ImagemWrap>
@@ -74,13 +75,14 @@ const Intro = () => {
           information architecture, etc.
         </Paragraph>
         <ImagemWrap>
+        Draw of smartphone full of hearts and comments
           {loadIntro && (
             <Image
               width={introWidth}
               height={introHeight}
               objectFit="cover"
               src="/img/port2.png"
-              alt="teste"
+              alt="Draw of smartphone full of hearts and comments"
             />
           )}
         </ImagemWrap>

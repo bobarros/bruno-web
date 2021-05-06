@@ -15,6 +15,7 @@ import {
   DescriptionProject,
   LineBreakPj,
   Estimation,
+  ImgAchor
 } from "../../shared/StyledShared";
 
 /////////////////////////////////////////////////////////////////// Component
@@ -76,16 +77,17 @@ const Intermediate = () => {
       </div>
       <div>
         <div>
-          <a
+          <ImgAchor
             target="_blank"
             rel="noopener"
             href="https://jujuwebsite.herokuapp.com/"
           >
+            Smartphone and laptop
             {!loadIntro && (
               <img
                 id="imageInter"
                 src="/svg/project.svg"
-                alt="bruno's portfolio image with three computers showing different websites"
+                alt="Smartphone and laptop showing an website of some tourism business"
               />
             )}
             {loadIntro && (
@@ -94,11 +96,11 @@ const Intermediate = () => {
                   width={introWidth}
                   height={introHeight}
                   src="/img/juju.jpg"
-                  alt="projeto"
+                  alt="Smartphone and laptop showing an website of some tourism business"
                 />
               </ImageProject>
             )}
-          </a>
+          </ImgAchor>
           <DescriptionProject>
             A website with a modern design, but extremely fast, with a score
             above 90 points on Google's{" "}
@@ -126,22 +128,23 @@ const Intermediate = () => {
           </DescriptionProject>
         </div>
         <div>
-          <a
+          <ImgAchor
             target="_blank"
             rel="noopener"
             href="https://www.brunobarros.online/en"
           >
+            brunobarros.online
             {loadIntro && (
               <ImageProject>
                 <Image
                   width={introWidth}
                   height={introHeight}
                   src="/img/bob.jpg"
-                  alt="projeto"
+                  alt="Smartphone and laptop showing my personal blog at brunobarros.online"
                 />
               </ImageProject>
             )}
-          </a>
+          </ImgAchor>
           <DescriptionProject>
             The website has two languages. When changing the language anywhere,
             the context is not lost, as is the case with some other simpler

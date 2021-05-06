@@ -15,6 +15,7 @@ import {
   DescriptionProject,
   LineBreakPj,
   Estimation,
+  ImgAchor
 } from "../../shared/StyledShared";
 
 /////////////////////////////////////////////////////////////////// Component
@@ -78,16 +79,17 @@ const Advanced = () => {
       </div>
       <div>
         <div>
-          <a
+          <ImgAchor
             target="_blank"
             rel="noopener"
             href="https://neymar-new.ideias.dev/en"
           >
+            example of website advanced
            {!loadIntro && (
               <img
                 id="imageAdvanced"
                 src="/svg/project.svg"
-                alt="bruno's portfolio image with three computers showing different websites"
+                alt="Office table full of devices showing an website with neymar face"
               />
             )}
             {loadIntro && (
@@ -96,11 +98,11 @@ const Advanced = () => {
                   width={introWidth}
                   height={introHeight}
                   src="/img/neymar.jpg"
-                  alt="projeto"
+                  alt="Office table full of devices showing an website with neymar face"
                 />
               </ImageProject>
             )}
-          </a>
+          </ImgAchor>
           <DescriptionProject>
             This is not Neymar's official website. It was an exercise I did to
             learn some new technologies. All of this on a lightweight website.
@@ -128,22 +130,23 @@ const Advanced = () => {
       <LineBreakPj />
       <div>
         <div>
-          <a
+          <ImgAchor
             target="_blank"
             rel="noopener"
             href="https://circus-berlin-bobarros.vercel.app/"
           >
+            example of website advanced
             {loadIntro && (
               <ImageProject>
                 <Image
                   width={introWidth}
                   height={introHeight}
                   src="/img/circus.jpg"
-                  alt="projeto"
+                  alt="screen with an example of advanced website of a hotel network"
                 />
               </ImageProject>
             )}
-          </a>
+          </ImgAchor>
           <DescriptionProject>
             This example shows that a complex website may have a few pages. Like
             the previous one, it was done as an exercise on the official

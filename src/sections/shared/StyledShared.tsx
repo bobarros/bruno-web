@@ -102,3 +102,7 @@ export const Estimation = styled.div`
     font-weight: 700;
   }
 `;
+
+export const ImgAchor = styled.a`
+  font-size: 0;
+`;

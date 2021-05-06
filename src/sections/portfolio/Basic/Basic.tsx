@@ -15,6 +15,7 @@ import {
   DescriptionProject,
   LineBreakPj,
   Estimation,
+  ImgAchor
 } from "../../shared/StyledShared";
 
 /////////////////////////////////////////////////////////////////// Component
@@ -70,16 +71,17 @@ const Basic = () => {
       </div>
       <div>
         <div>
-          <a
+          <ImgAchor
             target="_blank"
             rel="noopener"
             href="https://next-public-six.vercel.app/"
           >
+            Website with a black man dancing in the background
             {!loadIntro && (
               <img
                 id="imageBasic"
                 src="/svg/project.svg"
-                alt="bruno's portfolio image with three computers showing different websites"
+                alt="Website with a black man dancing in the background and in a beautiful living room"
               />
             )}
             {loadIntro && (
@@ -88,11 +90,11 @@ const Basic = () => {
                   width={introWidth}
                   height={introHeight}
                   src="/img/arch.jpg"
-                  alt="projeto"
+                  alt="Website with a black man dancing in the background and in a beautiful living room"
                 />
               </ImageProject>
             )}
-          </a>
+          </ImgAchor>
           <DescriptionProject>
             The project has only one page, but it could have others, going
             deeper into some projects. Your goal is to be a business card.

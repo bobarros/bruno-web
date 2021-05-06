@@ -78,13 +78,14 @@ export const Paragraph = styled.p`
   }
 `;
 
-export const ImagemWrap = styled.a`
+export const ImagemWrap = styled.div`
   width: fit-content;
   display: block;
   margin: 0 auto 0 auto;
   width: 80%;
   height: auto;
   max-width: 333px;
+  font-size: 0px;
 
   @media only screen and (max-width: 701px) {
     width: 95%;
