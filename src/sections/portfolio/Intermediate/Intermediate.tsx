@@ -1,3 +1,11 @@
+//////////////////////////////////////////////////////////////////////// Next
+
+import Image from "next/image";
+
+//////////////////////////////////////////////////////////////////////// React
+
+import { useEffect, useState } from "react";
+
 /////////////////////////////////////////////////////////////////// Styled
 
 import {
@@ -12,6 +20,24 @@ import {
 /////////////////////////////////////////////////////////////////// Component
 
 const Intermediate = () => {
+
+  const [loadIntro, setLoad] = useState(false);
+  const [introWidth, setWidth] = useState(0);
+  const [introHeight, setHeight] = useState(0);
+
+  useEffect(() => {
+     
+    const elHeight = document.getElementById("imageInter") as HTMLDivElement;
+    const elWidth = document.getElementById("imageInter") as HTMLDivElement;
+
+    ////any calc to set the height and width that I want.
+
+    setHeight(elHeight.offsetHeight);
+    setWidth(elWidth.offsetWidth);
+    setLoad(true);
+  }, []);
+
+
   return (
     <div>
       <TitleSub>Standard Project</TitleSub>
@@ -55,12 +81,23 @@ const Intermediate = () => {
             rel="noopener"
             href="https://jujuwebsite.herokuapp.com/"
           >
-            <ImageProject
-              width="500"
-              height="333"
-              src="/img/juju.jpg"
-              alt="projeto"
-            />
+            {!loadIntro && (
+              <img
+                id="imageInter"
+                src="/svg/project.svg"
+                alt="bruno's portfolio image with three computers showing different websites"
+              />
+            )}
+            {loadIntro && (
+              <ImageProject>
+                <Image
+                  width={introWidth}
+                  height={introHeight}
+                  src="/img/juju.jpg"
+                  alt="projeto"
+                />
+              </ImageProject>
+            )}
           </a>
           <DescriptionProject>
             A website with a modern design, but extremely fast, with a score
@@ -94,12 +131,16 @@ const Intermediate = () => {
             rel="noopener"
             href="https://www.brunobarros.online/en"
           >
-            <ImageProject
-              width="500"
-              height="333"
-              src="/img/bob.jpg"
-              alt="projeto"
-            />
+            {loadIntro && (
+              <ImageProject>
+                <Image
+                  width={introWidth}
+                  height={introHeight}
+                  src="/img/bob.jpg"
+                  alt="projeto"
+                />
+              </ImageProject>
+            )}
           </a>
           <DescriptionProject>
             The website has two languages. When changing the language anywhere,

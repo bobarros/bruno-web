@@ -33,19 +33,25 @@ export const LevelName = styled.p`
   padding-top: 3rem;
 `;
 
-export const ImageProject = styled.img`
-  width: 50rem;
-  height: 33rem;
-  display: block;
-  margin: 0 auto;
-  object-fit: cover;
-  object-position: center;
-  margin-bottom: 5rem;
-  border-radius: 5px 5px 5px 5px;
+export const ImageProject = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
 
-  @media only screen and (max-width: 600px) {
-    width: 90%;
-    height: auto;
+  img {
+    width: 50rem;
+    height: 33rem;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 5rem;
+    border-radius: 5px 5px 5px 5px;
+
+    @media only screen and (max-width: 600px) {
+      width: 90%;
+      height: auto;
+    }
   }
 `;
 

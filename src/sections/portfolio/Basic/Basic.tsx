@@ -1,3 +1,11 @@
+//////////////////////////////////////////////////////////////////////// Next
+
+import Image from "next/image";
+
+//////////////////////////////////////////////////////////////////////// React
+
+import { useEffect, useState } from "react";
+
 /////////////////////////////////////////////////////////////////// Styled
 
 import {
@@ -12,6 +20,22 @@ import {
 /////////////////////////////////////////////////////////////////// Component
 
 const Basic = () => {
+  const [loadIntro, setLoad] = useState(false);
+  const [introWidth, setWidth] = useState(0);
+  const [introHeight, setHeight] = useState(0);
+
+  useEffect(() => {
+     
+    const elHeight = document.getElementById("imageBasic") as HTMLDivElement;
+    const elWidth = document.getElementById("imageBasic") as HTMLDivElement;
+
+    ////any calc to set the height and width that I want.
+
+    setHeight(elHeight.offsetHeight);
+    setWidth(elWidth.offsetWidth);
+    setLoad(true);
+  }, []);
+
   return (
     <div>
       <TitleSub>Basic project</TitleSub>
@@ -51,12 +75,23 @@ const Basic = () => {
             rel="noopener"
             href="https://next-public-six.vercel.app/"
           >
-            <ImageProject
-              width="500"
-              height="333"
-              src="/img/arch.jpg"
-              alt="projeto"
-            />
+            {!loadIntro && (
+              <img
+                id="imageBasic"
+                src="/svg/project.svg"
+                alt="bruno's portfolio image with three computers showing different websites"
+              />
+            )}
+            {loadIntro && (
+              <ImageProject>
+                <Image
+                  width={introWidth}
+                  height={introHeight}
+                  src="/img/arch.jpg"
+                  alt="projeto"
+                />
+              </ImageProject>
+            )}
           </a>
           <DescriptionProject>
             The project has only one page, but it could have others, going

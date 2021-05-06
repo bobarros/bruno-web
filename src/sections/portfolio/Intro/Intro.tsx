@@ -12,7 +12,7 @@ import {
   Wrap,
   TextBlock,
   Paragraph,
-  ImagemWrap
+  ImagemWrap,
 } from "sections/portfolio/Intro/StyledIntro";
 
 /////////////////////////////////////////////////////////////////// Component
@@ -23,7 +23,6 @@ const Intro = () => {
   const [introHeight, setHeight] = useState(0);
 
   useEffect(() => {
-    console.log("fire");
     const elHeight = document.getElementById("introImages") as HTMLDivElement;
     const elWidth = document.getElementById("introImages") as HTMLDivElement;
 
@@ -51,46 +50,40 @@ const Intro = () => {
           The USD budgets seems so low because I'm charging the same as I do in
           Brazil. For now.
         </Paragraph>
-        <Paragraph>
-          <ImagemWrap>
-            {!loadIntro && (
-              <img
-                id="introImages"
-                src="/svg/portblack.svg"
-                alt="bruno's portfolio image with three computers showing different websites"
-              />
-            )}
-            {loadIntro && (
-              <Image
-                width={introWidth}
-                height={introHeight}
-                objectFit="cover"
-                src="/img/port1.png"
-                alt="teste"
-              />
-            )}
-          </ImagemWrap>
-        </Paragraph>
+        <ImagemWrap>
+          {!loadIntro && (
+            <img
+              id="introImages"
+              src="/svg/portblack.svg"
+              alt="bruno's portfolio image with three computers showing different websites"
+            />
+          )}
+          {loadIntro && (
+            <Image
+              width={introWidth}
+              height={introHeight}
+              objectFit="cover"
+              src="/img/port1.png"
+              alt="teste"
+            />
+          )}
+        </ImagemWrap>
         <Paragraph>
           <span>Development and design:</span> I plan and build a website from
           scratch. Logos, color scheme, layout for all types of screens,
           information architecture, etc.
         </Paragraph>
-
-        <Paragraph>
-          <ImagemWrap>
-            {loadIntro && (
-             <Image
-             width={introWidth}
-             height={introHeight}
-             objectFit="cover"
-             src="/img/port2.png"
-             alt="teste"
-           />
-            )}
-          </ImagemWrap>
-        </Paragraph>
-
+        <ImagemWrap>
+          {loadIntro && (
+            <Image
+              width={introWidth}
+              height={introHeight}
+              objectFit="cover"
+              src="/img/port2.png"
+              alt="teste"
+            />
+          )}
+        </ImagemWrap>
         <Paragraph>
           <span>Analysis:</span> I'll evaluate your existing digital properties
           and those of your competitors. Thus, I can point out possible paths in

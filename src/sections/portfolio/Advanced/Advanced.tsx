@@ -1,3 +1,11 @@
+//////////////////////////////////////////////////////////////////////// Next
+
+import Image from "next/image";
+
+//////////////////////////////////////////////////////////////////////// React
+
+import { useEffect, useState } from "react";
+
 /////////////////////////////////////////////////////////////////// Styled
 
 import {
@@ -13,6 +21,21 @@ import {
 
 const Advanced = () => {
 
+  const [loadIntro, setLoad] = useState(false);
+  const [introWidth, setWidth] = useState(0);
+  const [introHeight, setHeight] = useState(0);
+
+  useEffect(() => {
+     
+    const elHeight = document.getElementById("imageAdvanced") as HTMLDivElement;
+    const elWidth = document.getElementById("imageAdvanced") as HTMLDivElement;
+
+    ////any calc to set the height and width that I want.
+
+    setHeight(elHeight.offsetHeight);
+    setWidth(elWidth.offsetWidth);
+    setLoad(true);
+  }, []);
 
   return (
     <div>
@@ -60,12 +83,23 @@ const Advanced = () => {
             rel="noopener"
             href="https://neymar-new.ideias.dev/en"
           >
-            <ImageProject
-              width="500"
-              height="333"
-              src="/img/neymar.jpg"
-              alt="projeto"
-            />
+           {!loadIntro && (
+              <img
+                id="imageAdvanced"
+                src="/svg/project.svg"
+                alt="bruno's portfolio image with three computers showing different websites"
+              />
+            )}
+            {loadIntro && (
+              <ImageProject>
+                <Image
+                  width={introWidth}
+                  height={introHeight}
+                  src="/img/neymar.jpg"
+                  alt="projeto"
+                />
+              </ImageProject>
+            )}
           </a>
           <DescriptionProject>
             This is not Neymar's official website. It was an exercise I did to
@@ -99,12 +133,16 @@ const Advanced = () => {
             rel="noopener"
             href="https://circus-berlin-bobarros.vercel.app/"
           >
-            <ImageProject
-              width="500"
-              height="333"
-              src="/img/circus.jpg"
-              alt="projeto"
-            />
+            {loadIntro && (
+              <ImageProject>
+                <Image
+                  width={introWidth}
+                  height={introHeight}
+                  src="/img/circus.jpg"
+                  alt="projeto"
+                />
+              </ImageProject>
+            )}
           </a>
           <DescriptionProject>
             This example shows that a complex website may have a few pages. Like
