@@ -135,6 +135,19 @@ export default function Home() {
       {isClicked === "no" && (
         <> */}
           <SimpleLayout>
+            <div>
+              
+            </div>
+            <p>Too bad</p>
+            <p>Too bad</p>
+            <p>Too bad</p>
+            <p>Too bad</p>
+            <p>Too bad</p>
+            <p>Too bad</p>
+            <p>Too bad</p>
+            <p>Too bad</p>
+            <p>Too bad</p>
+            <p>Too bad</p>
             <p>Too bad</p>
           </SimpleLayout>
      {/*    </>

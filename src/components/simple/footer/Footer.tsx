@@ -8,7 +8,6 @@ import Link from "next/link";
 
 ///////////////////////////////////////////////////////////// Local Components
 
-import LogoSVG from "svg/LogoSVG";
 import GitSVG from "svg/GitSVG";
 import EmailSVG from "svg/EmailSVG";
 
@@ -21,7 +20,7 @@ import {
   Links,
   Logo,
   SocialIcons
-} from 'components/footer/StyledFooter';
+} from './StyledFooter';
 
 /////////////////////////////////////////////////////////////// Prep Components
 
@@ -49,18 +48,18 @@ const Footer = () => {
     <Wrap id="footer" className="nao-imprimir">
       <Link href="/">
         <Logo href="/">
-          logo bob<LogoSVG />
+          <p>LoGo</p>
         </Logo>
       </Link>
       <Links>
-        <CustomLink href="/">Home</CustomLink>
-        <CustomLink href="/habilidades">Skills</CustomLink>
-        <CustomLink href="/portfolio">Portfolio</CustomLink>
-        <CustomLink href="/contact">Contact</CustomLink>
+        <CustomLink href="#">Home</CustomLink>
+        <CustomLink href="#habilidades">Skills</CustomLink>
+        <CustomLink href="#portfolio">Portfolio</CustomLink>
+        <CustomLink href="#contact">Contact</CustomLink>
       </Links>
       <Text>
         <Credits>
-          <p>By <a target="_blank" rel="noopener" href="https://www.brunobarros.online">Bruno Barros</a>, with ❤️ and a lot of 💪</p>
+          <p>By <a target="_blank" rel="noopener" href="#ttps://www.brunobarros.online">Bruno Barros</a>, with 😒 and a lot of ☕</p>
           <p>2019-2021 brunobarros.dev</p>
           <p>Hosted by <a target="_blank" rel="noopener" href="https://vercel.com/">Vercel</a></p>
           <p><a target="_blank" rel="noopener" href="https://nextjs.org/">NEXT.<span>JS</span></a></p>

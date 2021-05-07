@@ -6,21 +6,17 @@ import Link from "next/link";
 
 import {
   Wrap,
-  Overlay,
   Text
-} from 'components/logo/StyledLogo';
-import LogoSVG from "svg/LogoSVG";
+} from './StyledLogo';
 
 /////////////////////////////////////////////////////////// Main Component
 
 export default function Logo() {
   return (
-    <Link href="/">
-      <Wrap href="/">
-        logo bob
+    <Link href="/" passHref>
+      <Wrap>
         <Text>.dev</Text>
-        <Overlay>logo</Overlay>
-        <LogoSVG />
+        <p>LoGo</p>
       </Wrap>
     </Link>
   );

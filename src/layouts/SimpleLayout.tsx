@@ -15,7 +15,7 @@ const IndexLayout = ({ children }:{children: ReactNode}) => {
   return (
     <>
       <Nav />
-      <main className="container-principal">{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );

@@ -3,11 +3,9 @@ import styled from 'styled-components';
 //////////////////////////////////
 
 export const Wrap = styled.footer`
-  background-color: var(--footer-background);
-  box-shadow: 0 5px 20px 5px var(--shadow);
+  background-color: navy;
   padding-bottom: 10rem;
   display: block;
-  transition: background-color 2s ease;
   font-family: 'JetBrains Mono';
   font-weight: 400;
 `;
@@ -21,7 +19,7 @@ export const Text = styled.div`
   line-height: 1.8rem;
   width: 75%;
   margin: 0 auto;
-  color: var(--color-font);
+  color: white;
   font-weight: 400;
 
   @media only screen and (max-width: 500px) {
@@ -34,13 +32,12 @@ export const Text = styled.div`
 //////////////////////////////////
 
 export const Credits = styled.div`
-  font-style: italic;
   a,
   a:active,
   a:link {
     text-decoration: none;
     font-size: 1.3rem;
-    color: var(--color-font);
+    color: white;
     font-weight: bold;
     font-weight: 700;
 
@@ -70,7 +67,7 @@ export const Links = styled.ul`
       text-decoration: none;
       color: inherit;
       padding: 2rem;
-      color: var(--color-font);
+      color: white;
       font-weight: 700;
       opacity: 1;
     }
@@ -78,32 +75,7 @@ export const Links = styled.ul`
     & li {
       padding: 2rem;
     }
-
-    & li:hover {
-      animation: menu_hover 250ms linear 0s 1 forwards;
-    }
-
-    @keyframes menu_hover {
-      0% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      50% {
-        transform: translateY(0.938rem);
-        opacity: 0;
-      }
-
-      51% {
-        transform: translateY(-0.938rem);
-        opacity: 0;
-      }
-
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
+    
 `;
 
 //////////////////////////////////
@@ -114,6 +86,18 @@ export const Logo = styled.a`
   padding: 5rem 0;
   display: block;
   font-size: 0;
+
+  p {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: white;
+    border-radius: 50%;
+    color: navy;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 auto;
+  }
 
   svg {
     box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.75);
@@ -143,7 +127,7 @@ export const SocialIcons = styled.div`
   svg {
     width: 4rem;
     height: 4rem;
-    fill: var(--color-font);
+    fill: white;
   }
 `;
 

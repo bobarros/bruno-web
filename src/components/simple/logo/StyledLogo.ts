@@ -9,11 +9,22 @@ export const Wrap = styled.a`
   left: 3.5rem;
   z-index: 50;
   font-size: 0;
-  box-shadow: 2px 7px 8px 0px rgba(0, 0, 0, 0.75);
   border-radius: 30px;
   background-color: #ffffff;
   width: 5.4rem;
   height: 5.4rem;
+
+  p:last-child {
+    color: navy;
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: 'JetBrains Mono';
+  }
 
   @media only screen and (max-width: 500px) {
     left: 1.5rem;

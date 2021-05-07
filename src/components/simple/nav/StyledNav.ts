@@ -1,6 +1,34 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 /////////////////////////////////////////////////////////
+
+export const NavWrap = styled.nav`
+  display: block;
+  height: 90px;
+  width: 100%;
+  background-color: navy;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  @media only screen and (max-width: 501px) {
+    height: 70px;
+  }
+`;
+///Same size above, to fix margin in next container
+export const Navfix = styled.nav`
+  display: block;
+  height: 90px;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: -1;
+
+  @media only screen and (max-width: 501px) {
+    height: 70px;
+  }
+`;
 
 export const NavBar = styled.nav`
   @media only screen and (max-width: 900px) {
@@ -9,29 +37,24 @@ export const NavBar = styled.nav`
 `;
 
 export const Links = styled.ul`
-
   display: flex;
-  width: 55rem;
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  top: 2.2rem;
-  justify-content: space-between;
+  height: 85px;
+  align-items: center;
+  justify-content: flex-end;
   font-size: 1.6rem;
-  color: var(--color-font);
-  padding: 1rem 2.5rem;
+  color: white;
+  padding: 1rem 3.5rem;
   border-radius: 30px;
-  transition: background-color 2s ease;
   font-family: "JetBrains Mono";
-  width: 50vw;
-  margin: 0px 25vw;
-
-  @media only screen and (max-width: 900px) {
-    right: 8rem;
-  }
 
   li {
     list-style: none;
+  }
+
+  svg {
+    fill: white;
+    width: 40px;
+    margin-left: 50px;
   }
 
   a,
@@ -44,20 +67,18 @@ export const Links = styled.ul`
   }
 
   li:hover {
-    transform: scale(1.05) translateY(-2px);
+    opacity: 0.8;
   }
 
   li:active {
-    transform: scale(1.05) translateY(1px);
+    opacity: 1;
   }
-
 `;
 
 /////////////////////////////////////////////////////////
 
 export const MovelNav = styled.div`
-
-  display:none;
+  display: none;
 
   @media only screen and (max-width: 900px) {
     position: fixed;
@@ -66,17 +87,15 @@ export const MovelNav = styled.div`
     left: 0;
     width: 100%;
     height: 6rem;
-    background-color: #121212;
+    background-color: navy;
     color: #efefef;
     z-index: 101;
-    transition: all 0.55s ease-in;  
   }
 `;
 
 ////////////////////////////////////////////////////////
 
 export const Sections = styled.div`
-
   display: flex;
   width: 100%;
   height: 100%;
@@ -87,7 +106,7 @@ export const Sections = styled.div`
   div {
     padding: 0 5rem;
   }
-  
+
   svg {
     width: 4.5rem;
     height: 4.5rem;
@@ -97,14 +116,13 @@ export const Sections = styled.div`
   a {
     font-size: 0;
   }
-    
 `;
 
 //////////////////////////////////////////////////////
 
 export const MenuMobile = styled.div`
-  background-color: var(--color-background);
-  color: var(--color-font);
+  background-color: navy;
+  color: white;
   height: calc(100vh - 6rem);
   width: 100vw;
   display: flex;
@@ -122,7 +140,7 @@ export const Item = styled.div`
   line-height: 6rem;
   font-family: "JetBrains Mono";
   font-weight: 700;
-  border-bottom: 1px solid var(--color-font);
+  border-bottom: 1px solid white;
   padding-left: 3rem;
 `;
 
@@ -137,9 +155,8 @@ export const Hamburguer = styled.div`
     margin: 8px 0;
     border-radius: 3px;
     transform-origin: center;
-    transition: transform 0.5s ease-out;
-  }     
-  `;
+  }
+`;
 
 //////////////////////////////////////////////////////
 
@@ -155,4 +172,19 @@ export const LogoMobile = styled.a`
   background-color: #fff;
   padding-left: 1rem;
   font-size: 0;
+
+  p {
+    color: navy;
+    font-size: 35px;
+    text-align: center;
+    line-height: 130px;
+    position: relative;
+    left: -4px;
+    font-family: "JetBrains Mono";
+
+    @media only screen and (max-width: 501px) {
+      font-size: 30px;
+      line-height: 95px;
+    }
+  }
 `;
