@@ -1,3 +1,7 @@
+////////////////////////////////////////////////////////////////////// React
+
+import { ReactNode } from "react";
+
 /////////////////////////////////////////////////////////// Next
 
 import Link from "next/link";
@@ -25,39 +29,51 @@ import Logo from "components/logo/Logo";
 import Night from "components/night/Night";
 import ToTop from 'components/ToTop/ToTop';
 
-/////////////////////////////////////////////////////////// Local Functions
+/////////////////////////////////////////////////////////////// Local Functions
 
 const moveUp = () => {
   const d = document;
-  d.getElementById("movelNav").classList.toggle("moveUpNavBox");
-  d.getElementById("navButton").classList.toggle("moveUpAnimated");
+
+  const movelNavEl = d.getElementById("movelNav") as HTMLDivElement;
+  const navButtonEl = d.getElementById("navButton") as HTMLDivElement;
+  movelNavEl.classList.toggle("moveUpNavBox");
+  navButtonEl.classList.toggle("moveUpAnimated");
 };
 
-/////////////////////////////////////////////////////////// Local Components
+////////////////////////////////////////////////////////////////////////// Types
 
-const LinkDesk = ({ href, children, className }) => {
+type Props = {
+  children?: ReactNode;
+  href: string;
+  className:string;
+};
+
+//////////////////////////////////////////////////////////////// Local Components
+
+const LinkDesk = ({ href, children, className }: Props) => {
   return (
     <li>
-      <Link href={href}><a className={className}>{children}</a></Link>
+      <Link href={href}>
+        <a className={className}>{children}</a>
+      </Link>
     </li>
-  )
-}
+  );
+};
 
-const LinkMobile = ({ href, children, className }) => {
+const LinkMobile = ({ href, children, className }: Props) => {
   return (
     <Item onClick={moveUp}>
       <Link href={href}>
         <a className={className}>{children}</a>
       </Link>
     </Item>
-  )
-}
+  );
+};
 
 /////////////////////////////////////////////////////////// Main Component
 
 const Nav = () => {
   const router = useRouter();
-  /////////////////// Swipeable config
   return (
     <>
       <Night />
