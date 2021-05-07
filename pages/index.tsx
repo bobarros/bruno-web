@@ -4,20 +4,21 @@ import Head from "next/head";
 
 //////////////////////////////////////////////////////////////////////// React
 
-import { useState } from "react";
+/* import { useState } from "react"; */
 
 //////////////////////////////////////////////////////////// Local Components
 
-import BaseLayout from "../src/layouts/BaseLayout";
+import SimpleLayout from "../src/layouts/SimpleLayout";
+/* import BaseLayout from "../src/layouts/BaseLayout";
 import Cover from "../src/sections/index/Cover/Cover";
 import How from "../src/sections/index/How/How";
 import What from "../src/sections/index/What/What";
-import IndexHeader from "../src/sections/index/IndexHeader/IndexHeader";
+import IndexHeader from "../src/sections/index/IndexHeader/IndexHeader"; */
 
 //////////////////////////////////////////////////////////////////////// Page
 
 export default function Home() {
-  const [isClicked, setIsClicked] = useState<undefined | string>(undefined);
+  /* const [isClicked, setIsClicked] = useState<undefined | string>(undefined);
 
   const closeCover = (ev: any) => {
     const hitElement = ev.target as HTMLElement;
@@ -49,7 +50,7 @@ export default function Home() {
       }
       questionWrap.style.display = "none";
     }, 1000);
-  };
+  }; */
 
   return (
     <>
@@ -123,7 +124,7 @@ export default function Home() {
         />
       </Head>
 
-      <Cover isClicked={isClicked} closeCover={closeCover} />
+{/*       <Cover isClicked={isClicked} closeCover={closeCover} />
       {isClicked === "yes" && (
         <BaseLayout>
           <IndexHeader />
@@ -132,10 +133,12 @@ export default function Home() {
         </BaseLayout>
       )}
       {isClicked === "no" && (
-        <>
-          <p>Too bad</p>
-        </>
-      )}
+        <> */}
+          <SimpleLayout>
+            <p>Too bad</p>
+          </SimpleLayout>
+     {/*    </>
+      )} */}
     </>
   );
 }
