@@ -9,6 +9,8 @@ import Head from "next/head";
 //////////////////////////////////////////////////////////// Local Components
 
 import SimpleLayout from "../src/layouts/SimpleLayout";
+import Intro from "../src/sections/simple/Intro/Intro";
+import Chat from "components/simple/chat/Chat";
 /* import BaseLayout from "../src/layouts/BaseLayout";
 import Cover from "../src/sections/index/Cover/Cover";
 import How from "../src/sections/index/How/How";
@@ -135,9 +137,7 @@ export default function Home() {
       {isClicked === "no" && (
         <> */}
           <SimpleLayout>
-            <div>
-              
-            </div>
+            <Intro />
             <p>Too bad</p>
             <p>Too bad</p>
             <p>Too bad</p>
@@ -149,6 +149,7 @@ export default function Home() {
             <p>Too bad</p>
             <p>Too bad</p>
             <p>Too bad</p>
+            <Chat />
           </SimpleLayout>
      {/*    </>
       )} */}

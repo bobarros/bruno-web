@@ -1,8 +1,9 @@
-const LogoSVG = () => {
+const LogoSVG = ({id = "", style = {}}) => {
   return (
     <svg
+      id={id}
+      style={style}
       className="nav-bar__svg"
-      id="Camada_1"
       data-name="Camada 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"

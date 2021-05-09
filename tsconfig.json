@@ -20,5 +20,5 @@
     "target": "esnext"
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*", "pages/*"]
+  "include": ["src/**/*", "pages/*", "next-env.d.ts"]
 }

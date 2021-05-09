@@ -1,3 +1,23 @@
+////////////////////////////////////////////////////////////////////// React
+
+import { ReactNode } from "react";
+
+/////////////////////////////////////////////////////////// Next
+
+import Link from "next/link";
+
+////////////////////////////////////////////////////////////////////////// Types
+
+type Props = {
+  children?: ReactNode;
+  className?: string;
+  href: string;
+  id?: string;
+  onClick?:any;
+};
+
+/////////////////////////////////////////////////////////
+
 import styled from "styled-components";
 
 /////////////////////////////////////////////////////////
@@ -6,17 +26,18 @@ export const NavWrap = styled.nav`
   display: block;
   height: 90px;
   width: 100%;
-  background-color: navy;
+  background-color: transparent;
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 3;
 
   @media only screen and (max-width: 501px) {
     height: 70px;
   }
 `;
 ///Same size above, to fix margin in next container
-export const Navfix = styled.nav`
+export const Navfix = styled.div`
   display: block;
   height: 90px;
   width: 100%;
@@ -30,7 +51,11 @@ export const Navfix = styled.nav`
   }
 `;
 
-export const NavBar = styled.nav`
+export const NavBar = styled.div`
+  opacity: 0;
+  background-color: navy;
+  transition: all 1s ease;
+
   @media only screen and (max-width: 900px) {
     display: none;
   }
@@ -47,8 +72,9 @@ export const Links = styled.ul`
   border-radius: 30px;
   font-family: "JetBrains Mono";
 
-  li {
-    list-style: none;
+  & #phoneIcon {
+    width: 100px;
+    transition: all 0.7s ease;
   }
 
   svg {
@@ -187,4 +213,41 @@ export const LogoMobile = styled.a`
       line-height: 95px;
     }
   }
+`;
+
+const LinkDeskPrep = ({ href, children, id, className }: Props) => {
+  return (
+    <li className={className} id={id}>
+      <Link href={href}>
+        <a>{children}</a>
+      </Link>
+    </li>
+  );
+};
+
+const LinkMobilePrep = ({ href, children, onClick }: Props) => {
+  return (
+    <Item onClick={onClick}>
+      <Link href={href}>
+        <a>{children}</a>
+      </Link>
+    </Item>
+  );
+};
+
+export const LinkDesk = styled(LinkDeskPrep)`
+  list-style: none;
+  width: max-content;
+  padding: 0;
+  transition: all .7s ease;
+
+  .newLinks & {
+    padding: 0 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65);
+  }
+`;
+
+export const LinkMobile = styled(LinkMobilePrep)`
+  list-style: none;
+  width: max-content;
 `;

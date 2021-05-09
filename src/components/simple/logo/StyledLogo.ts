@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 /////////////////////////////////////////////////////////
 
 export const Wrap = styled.a`
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   top: 1.25rem;
   left: 3.5rem;
   z-index: 50;
@@ -12,31 +12,19 @@ export const Wrap = styled.a`
   border-radius: 30px;
   background-color: #ffffff;
   width: 5.4rem;
-  height: 5.4rem;
-
-  p:last-child {
-    color: navy;
-    position: relative;
-    font-size: 16px;
-    font-weight: 700;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: 'JetBrains Mono';
-  }
+  height: 5.4rem; 
 
   @media only screen and (max-width: 500px) {
     left: 1.5rem;
   }
 
   @media only print {
-  .logo {
-    position: relative;
-    top: 1.25rem;
-    left: 3.5rem;
+    .logo {
+      position: relative;
+      top: 1.25rem;
+      left: 3.5rem;
+    }
   }
-}
 
   path,
   polygon {
@@ -64,7 +52,7 @@ export const Overlay = styled.p`
   transition: all 0.2s ease-out;
 
   &:hover {
-    opacity: 0.1  ;
+    opacity: 0.1;
   }
 `;
 
@@ -80,7 +68,19 @@ export const Text = styled.p`
   border-radius: 20px;
   padding: 1rem 2.5rem;
   width: fit-content;
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
 `;
 
-
+export const LogoName = styled.p`
+  color: navy;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "JetBrains Mono";
+  transition: all .7s ease;
+  opacity: 1;
+`;
