@@ -43,11 +43,12 @@ type Props = {
 
 //////////////////////////////////////////////////////////////// Main Component
 
-const Footer = () => {
+const Footer =  () => {
+
   return (
     <Wrap id="footer" className="nao-imprimir">
-      <Link href="/">
-        <Logo href="/">
+      <Link href="/home">
+        <Logo href="/home">
           <p>LoGo</p>
         </Logo>
       </Link>
@@ -59,7 +60,7 @@ const Footer = () => {
       </Links>
       <Text>
         <Credits>
-          <p>By <a target="_blank" rel="noopener" href="#ttps://www.brunobarros.online">Bruno Barros</a>, with 😒 and a lot of ☕</p>
+          <p>By <a target="_blank" rel="noopener" href="#ttps://brunobarros.dev">Bruno Barros</a>, with 😒 and a lot of ☕</p>
           <p>2019-2021 brunobarros.dev</p>
           <p>Hosted by <a target="_blank" rel="noopener" href="https://vercel.com/">Vercel</a></p>
           <p><a target="_blank" rel="noopener" href="https://nextjs.org/">NEXT.<span>JS</span></a></p>

@@ -1,6 +1,3 @@
-//////////////////////////////////////////////////////////////////////// Next
-
-import Image from "next/image";
 
 //////////////////////////////////////////////////////////////////////// React
 
@@ -11,8 +8,7 @@ import { useEffect, useState } from "react";
 import {
   Wrap,
   TextBlock,
-  Paragraph,
-  ImagemWrap,
+  Paragraph
 } from "sections/portfolio/Intro/StyledIntro";
 
 /////////////////////////////////////////////////////////////////// Component
@@ -37,56 +33,21 @@ const Intro = () => {
   return (
     <Wrap>
       <TextBlock>
-        <Paragraph>
-          Here, I will explain what I have to offer. After that, you will find
-          projects where my <a href="/skills">skills</a> can be evaluated.
-        </Paragraph>
-        <Paragraph>
+      <Paragraph>
           I stand out among others because I mix great developer skills with
-          great design fundamentals. I can build a website with quality and very
+          great design fundamentals. I can build a website with quality and
           quickly on my own.
         </Paragraph>
-        <ImagemWrap>
-          Draw representing people building an website
-          {!(load === "ready") && (
-            <img
-              id="introPrep"
-              src="/svg/portblack.svg"
-              alt="Draw representing people building an website in the screen as if was a house, with bricks"
-            />
-          )}
-          {load === "ready" && (
-            <Image
-              width={width}
-              height={height}
-              objectFit="cover"
-              src="/img/port1.png"
-              alt="Draw representing people building an website in the screen as if was a house, with bricks"
-            />
-          )}
-        </ImagemWrap>
         <Paragraph>
-          <span>Development and design:</span> I plan and build a website from
-          scratch. Logos, color scheme, layout for all types of screens,
-          information architecture, etc.
+          Here, You will find <a href="#projetos">projects</a> where my{" "}
+          <a href="/skills">skills</a> can be evaluated here.{" "}
         </Paragraph>
-        <ImagemWrap>
-          Draw of smartphone full of hearts and comments
-          {load === "ready" && (
-            <Image
-              width={width}
-              height={height}
-              objectFit="cover"
-              src="/img/port2.png"
-              alt="Draw of smartphone full of hearts and comments"
-            />
-          )}
-        </ImagemWrap>
         <Paragraph>
-          <span>Analysis:</span> I'll evaluate your existing digital properties
-          and those of your competitors. Thus, I can point out possible paths in
-          front of the desired objectives.
+          Last but not least, I tell you some of the things that{" "}
+          <a href="#donts">I don't do</a>. I have no intention of waste your
+          time.
         </Paragraph>
+       
       </TextBlock>
     </Wrap>
   );

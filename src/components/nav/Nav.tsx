@@ -81,7 +81,7 @@ const Nav = () => {
       <ToTop />
       <NavBar>
         <Links>
-          <LinkDesk className={router.pathname === "/" ? "underline" : ""} href="/">Home</LinkDesk>
+          <LinkDesk className={router.pathname === "/home" ? "underline" : ""} href="/home">Home</LinkDesk>
           <LinkDesk className={router.pathname === "/skills" ? "underline" : ""} href="/skills">Skills</LinkDesk>
           <LinkDesk className={router.pathname === "/portfolio" ? "underline" : ""} href="/portfolio">Porfolio</LinkDesk>
           <LinkDesk className={router.pathname === "/contact" ? "underline" : ""} href="/contact">Contact</LinkDesk>
@@ -100,7 +100,7 @@ const Nav = () => {
           </a>
         </Sections>
         <MenuMobile>
-          <LinkMobile className={router.pathname === "/" ? "underline" : ""} href="/" >
+          <LinkMobile className={router.pathname === "/home" ? "underline" : ""} href="/home" >
             Home
           </LinkMobile>
           <LinkMobile className={router.pathname === "/skills" ? "underline" : ""} href="/skills" >
@@ -113,7 +113,7 @@ const Nav = () => {
             Contact
           </LinkMobile>
         </MenuMobile>
-        <LogoMobile href="/">
+        <LogoMobile href="/home">
           logo bruno<LogoSVG />
         </LogoMobile>
       </MovelNav>

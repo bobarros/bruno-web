@@ -18,7 +18,7 @@ resultFactor = 2 * duration / largest;
 const sizesAnswer = [
   { duration: (280 * resultFactor) + "s", width: "280px", sum: "0s" },
   { duration: (360 * resultFactor) + "s", width: "360px", sum: (280 * resultFactor) + "s" },
-  { duration: (280 * resultFactor) + "s", width: "180px", sum: (640 * resultFactor) + "s" },
+  { duration: (280 * resultFactor) + "s", width: "260px", sum: (640 * resultFactor) + "s" },
   { duration: (25 * resultFactor) + "s", width: "25px", sum: (1000 * resultFactor) + "s" },
 ];
 

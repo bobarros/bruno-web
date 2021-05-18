@@ -13,7 +13,7 @@ type Props = {
   className?: string;
   href: string;
   id?: string;
-  onClick?:any;
+  onClick?: any;
 };
 
 /////////////////////////////////////////////////////////
@@ -45,6 +45,7 @@ export const Navfix = styled.div`
   left: 0;
   top: 0;
   z-index: -1;
+  transition: all .7s ease;
 
   @media only screen and (max-width: 501px) {
     height: 70px;
@@ -119,45 +120,6 @@ export const MovelNav = styled.div`
   }
 `;
 
-////////////////////////////////////////////////////////
-
-export const Sections = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5rem;
-
-  div {
-    padding: 0 5rem;
-  }
-
-  svg {
-    width: 4.5rem;
-    height: 4.5rem;
-    fill: #efefef;
-  }
-
-  a {
-    font-size: 0;
-  }
-`;
-
-//////////////////////////////////////////////////////
-
-export const MenuMobile = styled.div`
-  background-color: navy;
-  color: white;
-  height: calc(100vh - 6rem);
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  padding: 5rem 0 0 0;
-  position: relative;
-  top: -0.1rem;
-`;
-
 //////////////////////////////////////////////////////
 
 export const Item = styled.div`
@@ -173,15 +135,49 @@ export const Item = styled.div`
 //////////////////////////////////////////////////////
 
 export const Hamburguer = styled.div`
+  display: none;
+  opacity: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  z-index: 50;
+  z-index: 100;
+
   span {
-    width: 4.5rem;
-    height: 5px;
+    height: 4px;
     background-color: #efefef;
     display: block;
-    margin: 8px 0;
-    border-radius: 3px;
+    position: relative;
+    margin: 6px 0;
+    border-radius: 2px;
     transform-origin: center;
+    transition: all 0.4s ease;
   }
+
+  span:nth-child(1) {
+    width: 40px;
+  }
+  span:nth-child(2) {
+    width: 30px;
+    margin-left: 10px;
+  }
+  span:nth-child(3) {
+    width: 20px;
+    margin-left: 20px;
+  }
+
+  &:hover {
+    span:nth-child(2) {
+      width: 40px;
+      margin-left: 0;
+    }
+    span:nth-child(3) {
+      width: 40px;
+      margin-left: 0;
+    }
+  }  
 `;
 
 //////////////////////////////////////////////////////
@@ -239,7 +235,7 @@ export const LinkDesk = styled(LinkDeskPrep)`
   list-style: none;
   width: max-content;
   padding: 0;
-  transition: all .7s ease;
+  transition: all 0.7s ease;
 
   .newLinks & {
     padding: 0 30px;
@@ -250,4 +246,101 @@ export const LinkDesk = styled(LinkDeskPrep)`
 export const LinkMobile = styled(LinkMobilePrep)`
   list-style: none;
   width: max-content;
+`;
+
+////////////////////////////////////////////////////////
+
+export const Menu = styled.div`
+  display: none;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0%;
+  z-index: 50;
+  overflow: hidden;
+`;
+
+export const LeftMenu = styled.div`
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 50%;
+  font-family: "JetBrains Mono";
+  position: relative;
+  left: -50%;
+  transition: all 0.7s ease;
+  justify-content: center;
+  padding-bottom: 110px;
+
+  svg {
+    fill: white;
+    height: 35px;
+    width: 35px;
+    margin: 0 10px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 32px;
+    line-height: 30px;
+    width: 180px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    transition: all 0.7s ease;
+  }
+
+  a {
+    font-size: 0px;
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+  }
+`;
+
+export const RigthMenu = styled.div`
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 50%;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 50px;
+  font-family: "JetBrains Mono";
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  right: -50%;
+  transition: all 0.7s ease;
+  padding-bottom: 110px;
+
+  a {
+    padding: 8px 0;
+    transition: all 0.7s ease;
+  }
+`;
+
+export const BottomMenu = styled.div`
+  position: absolute;
+  bottom: -50vh;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  transition: all 0.7s ease;
+`;
+export const Credits = styled.div`
+  p {
+    padding: 5px 0;
+  }
+
+  span {
+    transition: all .7s ease;
+  }
 `;

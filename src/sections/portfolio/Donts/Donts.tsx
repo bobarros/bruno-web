@@ -10,7 +10,7 @@ import {
 
 const Donts = () => {
     return (
-    <TextBlock>
+    <TextBlock id="donts">
       <TitleSub>What I don't do</TitleSub>
       <Paragraph>
         To save your time, it's important to know projects that I don't work.

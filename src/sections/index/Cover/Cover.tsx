@@ -38,7 +38,7 @@ const Cover = ({
             width="300"
             height="300"
             layout="responsive"
-            priority={true}
+            priority
           ></Image>
         </Avatar>
         <Question id="questionWrap">
@@ -63,7 +63,7 @@ const Cover = ({
             <TextNo>
               <p>Great! It's going to be more fun.</p>
               <p>I'm going to show you something unexpected.</p>
-              <p>My website without...</p>
+              <p>How a website can be without...</p>
               <p>Me!</p>
               <Type>|</Type>
             </TextNo>

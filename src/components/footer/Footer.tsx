@@ -47,20 +47,20 @@ type Props = {
 const Footer = () => {
   return (
     <Wrap id="footer" className="nao-imprimir">
-      <Link href="/">
-        <Logo href="/">
+      <Link href="/home">
+        <Logo href="/home">
           logo bob<LogoSVG />
         </Logo>
       </Link>
       <Links>
-        <CustomLink href="/">Home</CustomLink>
-        <CustomLink href="/habilidades">Skills</CustomLink>
+        <CustomLink href="/home">Home</CustomLink>
+        <CustomLink href="/skills">Skills</CustomLink>
         <CustomLink href="/portfolio">Portfolio</CustomLink>
         <CustomLink href="/contact">Contact</CustomLink>
       </Links>
       <Text>
         <Credits>
-          <p>By <a target="_blank" rel="noopener" href="https://www.brunobarros.online">Bruno Barros</a>, with ❤️ and a lot of 💪</p>
+          <p>By <a target="_blank" rel="noopener" href="https://brunobarros.dev">Bruno Barros</a>, with ❤️ and a lot of 💪</p>
           <p>2019-2021 brunobarros.dev</p>
           <p>Hosted by <a target="_blank" rel="noopener" href="https://vercel.com/">Vercel</a></p>
           <p><a target="_blank" rel="noopener" href="https://nextjs.org/">NEXT.<span>JS</span></a></p>

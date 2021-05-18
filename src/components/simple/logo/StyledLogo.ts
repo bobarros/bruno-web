@@ -7,12 +7,12 @@ export const Wrap = styled.a`
   position: absolute;
   top: 1.25rem;
   left: 3.5rem;
-  z-index: 50;
+  z-index: 60;
   font-size: 0;
   border-radius: 30px;
   background-color: #ffffff;
   width: 5.4rem;
-  height: 5.4rem; 
+  height: 5.4rem;
 
   @media only screen and (max-width: 500px) {
     left: 1.5rem;
@@ -36,6 +36,11 @@ export const Wrap = styled.a`
     stroke-miterlimit: 10;
     stroke-width: 3px;
   }
+`;
+
+export const Anchor = styled.p`
+  font-size: 0;
+  height: 0;
 `;
 
 export const Overlay = styled.p`
@@ -72,7 +77,8 @@ export const Text = styled.p`
 `;
 
 export const LogoName = styled.p`
-  color: navy;
+  color: transparent;
+  text-shadow: 0 0 2px rgba(0, 0, 128, 1);
   position: relative;
   font-size: 16px;
   font-weight: 700;
@@ -81,6 +87,15 @@ export const LogoName = styled.p`
   transform: translate(-50%, -50%);
   text-align: center;
   font-family: "JetBrains Mono";
-  transition: all .7s ease;
+  transition: all 0.7s ease;
   opacity: 1;
+
+  span {
+    display: block;
+    font-size: 5px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 10px;
+  }
 `;

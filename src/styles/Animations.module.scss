@@ -1,0 +1,44 @@
+.fadeImage {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  opacity: 1;
+
+  @keyframes fade {
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+.showTip {
+  animation-name: showtip;
+  animation-duration: .7s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+  @keyframes showtip {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.open {
+  span:nth-child(1) {
+    width: 39px !important;
+    transform: translateY(9px) rotate(-45deg) !important;
+  }
+  span:nth-child(2) {
+    width: 40px !important;
+    margin-left: 0px !important;
+    transform: rotate(45deg) !important;
+  }
+  span:nth-child(3) {
+    display: none;
+  }
+}

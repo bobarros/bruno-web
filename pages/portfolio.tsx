@@ -67,10 +67,10 @@ export default function Portfolio() {
           Here are some examples from projects that I own. You may click on elements to be redirected to the published version.
           </Paragraph>
           <>
-            <Donts />
             <Basic />
             <Intermediate />
             <Advanced />
+            <Donts />
           </>
         </SkillsBlock>
       </Wait>

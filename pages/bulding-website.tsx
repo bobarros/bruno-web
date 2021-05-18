@@ -1,77 +1,38 @@
 //////////////////////////////////////////////////////////////////////// Next
 
 import Head from "next/head";
-import { useRouter } from 'next/router'
 
 //////////////////////////////////////////////////////////////////////// React
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //////////////////////////////////////////////////////////// Local Components
 
-import Cover from "../src/sections/index/Cover/Cover";
+import SimpleLayout from "../src/layouts/SimpleLayout";
+import Intro from "../src/sections/simple/Intro/Intro";
+import Chat from "components/simple/chat/Chat";
+import Progress from "components/simple/progress/Progress";
 import IndexBackground from "../src/sections/index/IndexBackground/IndexBackground";
 
 //////////////////////////////////////////////////////////////////////// Page
 
-
 export default function Home() {
-  const router = useRouter();
-  const [isClicked, setIsClicked] = useState<undefined | string>(undefined);
+  const [state, setState] = useState<string[]>([]);
+  const qtdOfComponents = 4;
 
-  const closeCover = (ev: any) => {
-    const hitElement = ev.target as HTMLElement;
-    const command = hitElement.getAttribute("aria-label");
-
-    const questionWrap = document.getElementById("questionWrap") as HTMLElement;
-    questionWrap.classList.add("disappearBox");
-
-    const classQuestionBox = document.getElementById("questionBox")!.classList;
+  useEffect(() => {
     setTimeout(() => {
-      //If the client is not certain, I will show a message saying what
-      //to expect and then closing the cove box
-      if (command === "no") {
-        const animationTime = 12000;
-        setIsClicked("no");
-        setTimeout(() => {          
-          classQuestionBox.add("rotateAndReduce");  
-        }, animationTime);
+      document.getElementById("backgroundWrap")!.style.top = "-100vh";
+    }, 1400);
+  }, []);
 
-        setTimeout(() => {
-          document.getElementById("backgroundWrap")!.style.left = "0";
-        }, animationTime + 700);
+  useEffect(() => {
+    const measureProgress = ((state.length / qtdOfComponents) * 100) / 2;
 
-        setTimeout(() => {
-          document.getElementById("animationLogo")!.style.transform = "scaleY(1)"
-        }, animationTime + 1400);
-
-        setTimeout(() => {
-          router.push('/bulding-website');
-        }, animationTime + 2100);
-        //If the client already wants to hire me, I'm just closing the box
-        //with some smaller and unanimated message.
-      } else {
-        const animationTime = 1500;
-        setIsClicked("yes");
-        setTimeout(() => {
-          classQuestionBox.add("rotateAndReduce");
-        }, animationTime);      
-
-        setTimeout(() => {
-          document.getElementById("backgroundWrap")!.style.left = "0";
-        }, animationTime + 700);
-
-        setTimeout(() => {
-          document.getElementById("animationLogo")!.style.transform = "scaleY(1)"
-        }, animationTime + 1400);
-
-        setTimeout(() => {
-          router.push('/home');
-        }, animationTime + 2100);
-      }
-      questionWrap.style.display = "none";
-    }, 1000);
-  };
+    document.getElementById(
+      "progressBar"
+    )!.style.width = `calc(${measureProgress}% - 10px`;
+  }, [state]);
 
   return (
     <>
@@ -144,8 +105,23 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: structuredJSON }}
         />
       </Head>
-      <Cover isClicked={isClicked} closeCover={closeCover} />   
-      <IndexBackground/>
+      <IndexBackground show />
+      <SimpleLayout state={state} setState={setState}>
+        <Intro state={state} setState={setState} />
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <p>Too bad</p>
+        <Chat state={state} setState={setState} />
+        <Progress />
+      </SimpleLayout>
     </>
   );
 }

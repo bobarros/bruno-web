@@ -15,8 +15,8 @@ import LogoSVG from "svg/LogoSVG";
 
 export default function Logo() {
   return (
-    <Link href="/">
-      <Wrap href="/">
+    <Link href="/home">
+      <Wrap href="/home">
         logo bob
         <Text>.dev</Text>
         <Overlay>logo</Overlay>

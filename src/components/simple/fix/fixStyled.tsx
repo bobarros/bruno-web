@@ -15,7 +15,7 @@ const PrepFix = ({
   id
 }: {
   children: string;
-  onClick: any;
+  onClick: () => void;
   className?: string;
   top?: string;
   right?: string;

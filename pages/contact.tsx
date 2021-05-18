@@ -12,9 +12,8 @@ import {
   Wrap,
   TextBlock,
   TitleHead,
-  Paragraph
-} from '../src/sections/contact/StyledContact';
-
+  Paragraph,
+} from "../src/sections/contact/StyledContact";
 
 //////////////////////////////////////////////////////////////////////// Page
 
@@ -42,14 +41,25 @@ export default function Contact() {
       <Wrap>
         <TextBlock>
           <TitleHead>Contact</TitleHead>
-          <Paragraph> 
+          <Paragraph>I have two perfect clients.</Paragraph>
+          <Paragraph>
+            People or businesses that have the budget for a premium website and
+            want a great outcome, built by someone that cares for every detail
+            necessary, even the ones you don't know that exist.
+          </Paragraph>
+          <Paragraph>
+            Agencies that can recognize high-quality work, the value I can
+            bring, and/or need help to speed up a project with high-quality
+            results.
+          </Paragraph>
+          <Paragraph>
             I organize my time in a way that makes it possible to get maximum
             productivity.
           </Paragraph>
           <Paragraph>
             In a regular day, I read my emails only three times. At the
             beginning of the day (8h~9h), after lunch (13h~14h), and right after
-            stopping to work (19h~20h). My time zone is UTC+3.
+            stopping to work (19h~20h). My time zone is UTC-3.
           </Paragraph>
           <Paragraph>
             I will answer you in less than 24 hours and at these times before
@@ -57,7 +67,16 @@ export default function Contact() {
             interested in my work..
           </Paragraph>
           <Paragraph>I wish you an excellent day and all the best.</Paragraph>
-          <Paragraph> Bruno Barros - <a target="_blank" rel="noopener" href="mailto:bruno.barros@ideias.dev">bruno.barros@ideias.dev</a> 
+          <Paragraph>
+            {" "}
+            Bruno Barros -{" "}
+            <a
+              target="_blank"
+              rel="noopener"
+              href="mailto:bruno.barros@ideias.dev"
+            >
+              bruno.barros@ideias.dev
+            </a>
           </Paragraph>
         </TextBlock>
       </Wrap>

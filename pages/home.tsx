@@ -1,77 +1,29 @@
 //////////////////////////////////////////////////////////////////////// Next
 
 import Head from "next/head";
-import { useRouter } from 'next/router'
 
 //////////////////////////////////////////////////////////////////////// React
 
-import { useState } from "react";
+import { useEffect } from "react"
 
 //////////////////////////////////////////////////////////// Local Components
 
-import Cover from "../src/sections/index/Cover/Cover";
+import BaseLayout from "../src/layouts/BaseLayout";
+import How from "../src/sections/index/How/How";
 import IndexBackground from "../src/sections/index/IndexBackground/IndexBackground";
+import What from "../src/sections/index/What/What";
+import IndexHeader from "../src/sections/index/IndexHeader/IndexHeader";
+;
 
 //////////////////////////////////////////////////////////////////////// Page
 
-
 export default function Home() {
-  const router = useRouter();
-  const [isClicked, setIsClicked] = useState<undefined | string>(undefined);
 
-  const closeCover = (ev: any) => {
-    const hitElement = ev.target as HTMLElement;
-    const command = hitElement.getAttribute("aria-label");
-
-    const questionWrap = document.getElementById("questionWrap") as HTMLElement;
-    questionWrap.classList.add("disappearBox");
-
-    const classQuestionBox = document.getElementById("questionBox")!.classList;
+  useEffect(() => {
     setTimeout(() => {
-      //If the client is not certain, I will show a message saying what
-      //to expect and then closing the cove box
-      if (command === "no") {
-        const animationTime = 12000;
-        setIsClicked("no");
-        setTimeout(() => {          
-          classQuestionBox.add("rotateAndReduce");  
-        }, animationTime);
-
-        setTimeout(() => {
-          document.getElementById("backgroundWrap")!.style.left = "0";
-        }, animationTime + 700);
-
-        setTimeout(() => {
-          document.getElementById("animationLogo")!.style.transform = "scaleY(1)"
-        }, animationTime + 1400);
-
-        setTimeout(() => {
-          router.push('/bulding-website');
-        }, animationTime + 2100);
-        //If the client already wants to hire me, I'm just closing the box
-        //with some smaller and unanimated message.
-      } else {
-        const animationTime = 1500;
-        setIsClicked("yes");
-        setTimeout(() => {
-          classQuestionBox.add("rotateAndReduce");
-        }, animationTime);      
-
-        setTimeout(() => {
-          document.getElementById("backgroundWrap")!.style.left = "0";
-        }, animationTime + 700);
-
-        setTimeout(() => {
-          document.getElementById("animationLogo")!.style.transform = "scaleY(1)"
-        }, animationTime + 1400);
-
-        setTimeout(() => {
-          router.push('/home');
-        }, animationTime + 2100);
-      }
-      questionWrap.style.display = "none";
-    }, 1000);
-  };
+      document.getElementById("backgroundWrap")!.style.top = "-100vh";
+    }, 1400);
+  },[]);
 
   return (
     <>
@@ -144,8 +96,12 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: structuredJSON }}
         />
       </Head>
-      <Cover isClicked={isClicked} closeCover={closeCover} />   
-      <IndexBackground/>
+      <BaseLayout>
+        <IndexBackground show />
+        <IndexHeader />
+        <What />
+        <How />
+      </BaseLayout>
     </>
   );
 }

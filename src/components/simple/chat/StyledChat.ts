@@ -11,10 +11,9 @@ export const Wrap = styled.footer`
   width: 60px;
   height: 60px;
   z-index: 10;
-
-  svg {
-    width: 60px;
-    height: 60px;
-    fill: navy;
-  }
+`;
+export const ChatSvg = styled.svg`
+  width: 60px;
+  height: 60px;
+  fill: navy;
 `;
