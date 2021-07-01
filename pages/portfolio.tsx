@@ -67,7 +67,7 @@ export default function Portfolio() {
             I'm working a lot lately on client projects and felt that my portfolio here was outdated. I decided to remove it until I have the time to update them.
           </Paragraph>
           <Paragraph>
-            Check it out my <a target="_blank" rel="noopener" href="https://github.com/bobarros">GitHub profile</a>, for more up-to-date things..
+            Check it out my <a target="_blank" rel="noopener" href="https://github.com/bobarros">GitHub profile</a>, for more up-to-date things.
           </Paragraph>
           {/* <>
             <Basic />
